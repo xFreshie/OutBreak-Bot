@@ -1,0 +1,24 @@
+{
+  "name": "chromejr",
+  "version": "1.0.0",
+  "description": "A discord bot for multiple purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Freshie",
+  "license": "ISC",
+  "dependencies": {
+    "cleverbot": "^1.0.1",
+    "cleverbot-node": "^0.3.11",
+    "cleverbot.io": "^1.0.4",
+    "discord-eco": "0.0.10",
+    "discord-money": "^0.1.4",
+    "discord.js": "^11.3.0",
+    "fs": "0.0.1-security",
+    "opusscript": "0.0.6",
+    "quick.db": "^3.0.3",
+    "sqlite": "^2.9.1",
+    "ytdl-core": "^0.19.0"
+  }
+}

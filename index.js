@@ -99,8 +99,13 @@ bot.on("message", function(message) {
     var args = message.content.substring(PREFIX.length).split(" ");
     console.log(`(ChromeCommand) ${message.author.id}: ${message.content}`);
     switch (args[0].toLowerCase()) {
-        case "ping":
-            message.channel.send('**Pong!** \nMy **Ping is** ' +bot.ping+'  ms');
+        case"ping":
+            var botpppt = bot.ping.toString();
+            var botzping = botpppt.substring(0, 5);
+            var pingembed = new Discord.RichEmbed()
+            .addField('Pong!', 'Bot`s Latency is - '+botzping+"ms." )
+            .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
+            message.channel.send(pingembed);
             break;
 		case "serverinfo":
 			let sicon = message.guild.displayAvatarURL;

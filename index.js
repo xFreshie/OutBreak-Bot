@@ -193,7 +193,7 @@ bot.on("message", function(message) {
 	case "roast":
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
-async def listservers(ctx):
+	case "listservers":
     x = '\n'.join([str(server) for server in client.servers])
     print(x)
     var serverlist = new Discord.RichEmbed()(title = "Servers", description = x, color = 0xFFFFF)

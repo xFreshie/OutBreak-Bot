@@ -195,7 +195,7 @@ bot.on("message", function(message) {
 		break;
 	case "say":
     			var args = Array.message.content.split(" ")
-    			message.channel.send(message.channel, "%s" % (args.join(","))
+    			message.channel.send(message.channel, "%s" % (args.join(",")))
 		break;
     }
 });

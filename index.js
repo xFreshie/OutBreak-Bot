@@ -194,7 +194,7 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
-		    message.channel.send("**In maintenance**")
+		    await ctx.send(arg)
 		break;
     }
 });

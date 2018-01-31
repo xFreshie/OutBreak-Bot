@@ -191,7 +191,9 @@ bot.on("message", function(message) {
 		message.channel.send("***== Economy Commands ==**\n**-money** = **Shows you the balance in your bank account**\n**-addmoney** = **Adds money to the tagged user's account** ```MUST BE A STAFF TO USE```\n**-payfine** = **Pays a fine**\n**More commands coming soon!**");
 		break;
 	case "roast":
-			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
+		var memberzz= message.mentions.members.first()
+		if (!message.mentions.members.first()||message.guild.members.get(args[0])||!args[2]) return message.reply("**You entered it wrong idiot**");
+			message.channel.send(message.mentions.members.first()roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")

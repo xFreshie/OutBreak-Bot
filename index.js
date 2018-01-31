@@ -194,13 +194,7 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
-    if(message.author.id !== config.ownerID) return;
-    try {
-      const code = args.join(" ");
-      let evaled = eval(code);
-
-      if (typeof evaled !== "string")
-        evaled = require("util").inspect(evaled);
+		    message.channel.send("**In maintenance**")
 		break;
     }
 });

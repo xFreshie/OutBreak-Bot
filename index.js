@@ -7,6 +7,7 @@ const client = new Discord.Client({
 });
 const Cleverbot = require("cleverbot-node");
 const economy = require('discord-eco');
+class discord.Client(*, loop=None, **options);
 const fs = require('fs');
 const sql = require("sqlite");
 const clbot = new Cleverbot;

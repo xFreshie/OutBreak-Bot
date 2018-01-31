@@ -194,7 +194,7 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "listservers":
-		    message.channel.send(discord.Client(loop=None, servers));
+		    message.channel.send("**Command in maintenance**");
 		    break;
     }
 });

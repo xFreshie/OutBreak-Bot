@@ -196,7 +196,7 @@ bot.on("message", function(message) {
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")
 		break;
-	if (cmd === 'gtg'){
+	case "gtg":
 		return message.channel.send("Bye bye i will miss you :heart:");
 	break;
     }

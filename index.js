@@ -194,7 +194,7 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
-		    await ctx.send(arg)
+		    await message.channel.send(arg)
 		break;
     }
 });

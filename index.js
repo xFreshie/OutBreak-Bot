@@ -193,7 +193,6 @@ bot.on("message", function(message) {
 	case "roast":
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
-@client.command(pass_context = True)
 async def listservers(ctx):
     x = '\n'.join([str(server) for server in client.servers])
     print(x)

@@ -193,11 +193,6 @@ bot.on("message", function(message) {
 	case "roast":
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
-	case "listservers":
-    x = '\n'.join([str(server) for server in client.servers])
-    print(x)
-    var serverlist = new Discord.RichEmbed()(title = "Servers", description = x, color = 0xFFFFF)
-    return await client.say(serverlist)
 	case "say":
     		args = message.content.split(" ")
     		#args[0] = !say

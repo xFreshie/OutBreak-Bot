@@ -169,7 +169,7 @@ bot.on("message", function(message) {
 		var memberzz= message.mentions.members.first()
 		if (!message.mentions.members.first()||message.guild.members.get(args[0])||!args[2]) return message.reply("Usage -addmoney @name [Amount]");
 			 if(message.member.hasPermission("MANAGE_MESSAGES")){
-				economy.updateBalance(memberzz.user.id, args[2]).then((i) => { 
+				economy.updateBalance(memberzz.user.id , args[2]).then((i) => { 
 				message.channel.send(`**You Sent ${memberzz.user.username} `+args[2]+`**\n**New Balance:** ${i.money}`);
 				})
 			}
@@ -191,9 +191,9 @@ bot.on("message", function(message) {
 		message.channel.send("***== Economy Commands ==**\n**-money** = **Shows you the balance in your bank account**\n**-addmoney** = **Adds money to the tagged user's account** ```MUST BE A STAFF TO USE```\n**-payfine** = **Pays a fine**\n**More commands coming soon!**");
 		break;
 	case "roast":
-		var memberzz= message.mentions.members.first()
+		var memberzzz= message.mentions.members.first()
 		if (!message.mentions.members.first()||message.guild.members.get(args[0])||!args[2]) return message.reply("**You entered it wrong idiot**");
-			message.channel.send(message.mentions.members.first roast[Math.floor(Math.random() * roast.length)]);
+			message.channel.send(memberzzz.user.id roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")

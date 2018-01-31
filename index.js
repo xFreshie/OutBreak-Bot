@@ -196,8 +196,8 @@ bot.on("message", function(message) {
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")
 		break;
-	if (message === "hello")
-		message.channel.send(":cookie:")
+	if (cmd === 'gtg'){
+		return message.channel.send("Bye bye i will miss you :heart:");
 	break;
     }
 });

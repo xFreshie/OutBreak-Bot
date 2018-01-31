@@ -194,7 +194,19 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "listservers":
-		    message.channel.send("**Command in maintenance**");
+    		x = '\n'.join([str(server) for server in client.servers])
+    		print(x)
+    		embed = discord.Embed(title = "Servers", description = x, color = 0xFFFFF)
+    		return await client.say(embed = embed)
+		    break;
+	case "say":
+    		if message.content.upper().startswith('!SAY')
+    		args = message.content.split(" ")
+    		#args[0] = !say
+    		#args[1] = Hey
+   		#args[2] = There
+    		#args[1:] = Hey There
+    		await client.send_message(message.channel, "%s" % (" ".join(args[1:])))
 		    break;
     }
 });

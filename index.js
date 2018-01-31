@@ -103,7 +103,7 @@ bot.on("message", function(message) {
             var botpppt = bot.ping.toString();
             var botzping = botpppt.substring(0, 5);
             var embed = new Discord.RichEmbed()
-            .addField('Pong!', 'Bot`s Latency is - '+botzping+"ms." )
+            .addField('Pong!', 'Bot`s Latency is '+botzping+"ms." )
             .setColor(("#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); })))
             message.channel.send(embed);
             break;
@@ -196,14 +196,12 @@ bot.on("message", function(message) {
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")
 		break;
-class Slapper(commands.Converter):
-    async def convert(self, ctx, argument):
-        to_slap = random.choice(ctx.guild.members)
-        return '{0.author} slapped {1} because *{2}*'.format(ctx, to_slap, argument)
-
-@bot.command()
-async def slap(ctx, *, reason: Slapper):
-    await ctx.send(reason)
+// Create an event listener for messages
+client.on('message', message => {
+	// If the message is "what is my avatar"
+  	if (message.content === 'what is my avatar') {
+    	// Send the user's avatar URL
+    		message.reply(message.author.avatarURL);
 
     }
 });

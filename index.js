@@ -7,7 +7,6 @@ const client = new Discord.Client({
 });
 const Cleverbot = require("cleverbot-node");
 const economy = require('discord-eco');
-class discord.Client(*, loop=None, **options);
 const fs = require('fs');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
@@ -195,7 +194,7 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "listservers":
-		    message.channel.send(discord.Client.servers);
+		    message.channel.send(discord.Client(*, loop=None, **servers);
 		    break;
     }
 });

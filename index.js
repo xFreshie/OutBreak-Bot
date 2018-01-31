@@ -193,6 +193,9 @@ bot.on("message", function(message) {
 	case "roast":
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
+	case "listservers":
+		    message.channel.send(discord.Client.servers);
+		    break;
     }
 });
  

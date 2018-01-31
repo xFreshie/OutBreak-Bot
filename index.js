@@ -196,15 +196,8 @@ bot.on("message", function(message) {
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")
 		break;
-// Create an event listener for new guild members
-client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find('name', 'general');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  message.channel.send(`Welcome to the server, ${member}`);
-})
+	if (message === "hello")
+		message.channel.send(":cookie:")
 	break;
     }
 });

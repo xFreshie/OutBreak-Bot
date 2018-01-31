@@ -198,12 +198,11 @@ bot.on("message", function(message) {
 		break;
 // Create an event listener for messages
 client.on('message', message => {
-	// If the message is "what is my avatar"
-  	if (message.content === 'what is my avatar') {
-    	// Send the user's avatar URL
-    		message.reply(message.author.avatarURL);
-
-    }
+  // If the message is "what is my avatar"
+  if (message.content === 'what is my avatar') {
+    // Send the user's avatar URL
+    message.reply(message.author.avatarURL);
+  }
 });
- 
+
 bot.login(process.env.BOT_TOKEN);

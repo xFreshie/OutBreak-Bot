@@ -193,12 +193,12 @@ bot.on("message", function(message) {
 	case "roast":
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
-	case "listservers":
-    			x = '\n'.join([str(server) for server in client.servers])
-    			print(x)
-    			embed = discord.Embed(title = "Servers", description = x, color = 0xFFFFF)
-    			return await client.say(embed = embed)
-			    break;
+@client.command(pass_context = True)
+async def listservers(ctx):
+    x = '\n'.join([str(server) for server in client.servers])
+    print(x)
+    embed = discord.Embed(title = "Servers", description = x, color = 0xFFFFF)
+    return await client.say(embed = embed)
 	case "say":
     		if message.content.upper().startswith('!SAY')
     		args = message.content.split(" ")

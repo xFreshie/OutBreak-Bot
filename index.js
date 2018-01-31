@@ -199,6 +199,13 @@ bot.on("message", function(message) {
 	case "gtg":
 		return message.channel.send("Bye bye i will miss you :heart:");
 	break;
+		    
+		    
+client.on('guildMemberAdd', member => {
+	let guild = member.guild;
+	guild.defaultChannel.sendMessage('Welcome ${member.user.username} to the server');
+});
+		    break
     }
 });
 

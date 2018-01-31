@@ -196,13 +196,14 @@ bot.on("message", function(message) {
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")
 		break;
-// Create an event listener for messages
-client.on('message', message => {
-  // If the message is "what is my avatar"
-  if (message.content === 'what is my avatar') {
-    // Send the user's avatar URL
-    message.reply(message.author.avatarURL);
-  }
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find('name', 'welcome-and-goodbye');
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to the server, ${member}`);
 });
 
 bot.login(process.env.BOT_TOKEN);

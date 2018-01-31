@@ -204,7 +204,9 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   // Send the message, mentioning the member
   channel.send(`Welcome to the server, ${member}`);
+})
 	break;
+    }
 });
 
 bot.login(process.env.BOT_TOKEN);

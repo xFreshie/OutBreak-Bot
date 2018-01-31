@@ -194,13 +194,13 @@ bot.on("message", function(message) {
 			message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
-    		args = message.content.split(" ")
-    		#args[0] = !say
-    		#args[1] = Hey
-   		#args[2] = There
-    		#args[1:] = Hey There
-    		message.channel.send(message.channel, "%s" % (" ".join(args[1:])))
-		    break;
+    			args = message.content.split(" ")
+    			#args[0] = !say
+    			#args[1] = Hey
+   			#args[2] = There
+    			#args[1:] = Hey There
+    			message.channel.send(message.channel, "%s" % (" ".join(args[1:])))
+		break;
     }
 });
  

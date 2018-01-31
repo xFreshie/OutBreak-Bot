@@ -196,8 +196,6 @@ bot.on("message", function(message) {
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")
 		break;
-import random
-
 class Slapper(commands.Converter):
     async def convert(self, ctx, argument):
         to_slap = random.choice(ctx.guild.members)

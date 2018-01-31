@@ -195,10 +195,7 @@ bot.on("message", function(message) {
 		break;
 	case "say":
     			args = message.content.split(" ")
-    			args[0] = !say
-    			args[1] = Hey
-   			args[2] = There
-    			args[1:] = Hey There
+    			#args[1:] = Hey There
     			message.channel.send(message.channel, "%s" % (" ".join(args[1:])))
 		break;
     }

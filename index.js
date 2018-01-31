@@ -193,7 +193,8 @@ bot.on("message", function(message) {
 	case "roast":
 		var memberzzz= message.mentions.members.first()
 		if (!message.mentions.members.first()||message.guild.members.get(args[0])||!args[2]) return message.reply("**You entered it wrong idiot**");
-			message.channel.send(memberzzz.user.id roast[Math.floor(Math.random() * roast.length)]);
+			message.channel.send(memberzz.user.id , args[2]).then((i) => { 
+				roast[Math.floor(Math.random() * roast.length)]);
 		break;
 	case "say":
 		    message.channel.send("```css\nIn Maintenance```")

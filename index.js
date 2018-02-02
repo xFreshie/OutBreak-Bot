@@ -58,7 +58,7 @@ var roast = [
 ]
 
 var dab = [
-	'https://media.giphy.com/media/A4R8sdUG7G9TG/giphy.gif'
+	'https://media.giphy.com/media/d4blihcFNkwE3fEI/giphy.gif'
 ]
  
 var bot = new Discord.Client();
@@ -158,7 +158,7 @@ bot.on("message", function(message) {
             break;
 	case "dab":
 	message.delete().catch(O_o=>{});
-    message.channel.send("**dab**", {
+    message.channel.send("**<o/**", {
         file: (dab[Math.floor(Math.random() * dab.length)])
     });
 		break;

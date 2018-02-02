@@ -151,11 +151,13 @@ bot.on("message", function(message) {
 		message.channel.send('**=== Help ===**\n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-noticeme** = Notices you.\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\nType **-economy** for banking commands \n```Please use - as the prefix```\n**Special thanks to Eshan for helping me out!**');
         break;
     case "meme":
+	message.delete().catch(O_o=>{});
     message.channel.send("***Danke ME ME***", {
         file: (memelist[Math.floor(Math.random() * memelist.length)])
     });
             break;
 	case "dab":
+	message.delete().catch(O_o=>{});
     message.channel.send("**dab**", {
         file: (dab[Math.floor(Math.random() * dab.length)])
     });

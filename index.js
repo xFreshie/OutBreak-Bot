@@ -194,7 +194,10 @@ bot.on("message", function(message) {
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
 	case "say":
-		    message.channel.send("```css\nIn Maintenance```")
+		if (!message.member.roles.some(r=>["bot-admin"].includes(r.name)) ) return message.reply("Sorry, you do not have the permission to do this!");
+        	var sayMessage = message.content.substring(4)
+        	message.delete().catch(O_o=>{});
+        	message.channel.send(sayMessage);
 		break;
 	case "gtg":
 		return message.channel.send("Bye bye i will miss you :heart:");

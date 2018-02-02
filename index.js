@@ -200,7 +200,7 @@ bot.on("message", function(message) {
         	message.channel.send(sayMessage);
 		break;
 	case "kick":
-		    message.channel.send"**In maintenance, please wait for freshie to add the command!**")
+		    message.channel.send("**In maintenance, please wait for freshie to add the command!**")
     }
 });
 

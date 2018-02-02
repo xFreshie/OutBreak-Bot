@@ -194,7 +194,6 @@ bot.on("message", function(message) {
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
 	case "say":
-		if(message.member.hasPermission("MANAGE_MESSAGES") ) return message.reply("Sorry, you do not have the permission to do this!");
         	var sayMessage = message.content.substring(4)
         	message.delete().catch(O_o=>{});
         	message.channel.send(sayMessage);

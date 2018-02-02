@@ -199,10 +199,8 @@ bot.on("message", function(message) {
         	message.delete().catch(O_o=>{});
         	message.channel.send(sayMessage);
 		break;
-client.on('gtg', function(message) {
-        // Don't forget to log the message!
+	client.on('gtg', function(message) {
         client.sendMessage(message.channel, "bye i will miss you :heart:!");
-	break;
     }
 });
 

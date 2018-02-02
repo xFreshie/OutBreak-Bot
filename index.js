@@ -148,7 +148,7 @@ bot.on("message", function(message) {
         message.channel.send(message.author.toString() + " Hi senpaii~~ ");
         break;
     case "help":
-		message.channel.send('**=== Help ===**\n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-noticeme** = Notices you.\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\nType **-economy** for banking commands \n```Please use - as the prefix```\n**Special thanks to Eshan for helping me out!**');
+		message.channel.send('**=== Help ===**\n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-noticeme** = Notices you.\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\nType **-economy** for banking commands \n```Please use - as the prefix```\n**Special thanks to Eshan for helping me out!**');
         break;
     case "meme":
 	message.delete().catch(O_o=>{});
@@ -200,18 +200,7 @@ bot.on("message", function(message) {
         	message.channel.send(sayMessage);
 		break;
 	case "kick":
-		if(message.member.hasPermission("KICK_MEMBERS")){
-			return message.reply("Sorry, you do not have the permission to do this!"); // if author has no perms
-        	var kickedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
-        	if (!kickedmember) return message.reply("Please mention a valid member of this server!") // if there is no kickedmmeber var
-        	if (!kickedmember.kickable) return message.reply("I cannot kick this member!") // if the member is unkickable
-        	var kickreasondelete = 10 + kickedmember.user.id.length //sets the length of the kickreasondelete
-        	var kickreason = message.content.substring(kickreasondelete).split(" "); // deletes the first letters until it reaches the reason
-        	var kickreason = kickreason.join(" "); // joins the list kickreason into one line
-        	if (!kickreason) return message.reply("Please indicate a reason for the kick!") // if no reason
-       		kickedmember.kick(kickreason) //if reason, kick
-          		.catch(error => message.reply(`Sorry @${message.author} I couldn't kick because of : ${error}`)); //if error, display error
-        	message.reply(`${kickedmember.user.username} has been kicked by ${message.author.username} because: ${kickreason}`); // sends a message saying he was kicked
+		    message.channel.send"**In maintenance, please wait for freshie to add the command!**")
     }
 });
 

@@ -200,8 +200,8 @@ bot.on("message", function(message) {
         	message.channel.send(sayMessage);
 		break;
 	case "kick":
-		if(message.member.hasPermission("KICK_MEMBERS"))  
-		else message.reply("Sorry, you do not have the permission to do this!"); // if author has no perms
+		if(message.member.hasPermission("KICK_MEMBERS")){
+			return message.reply("Sorry, you do not have the permission to do this!"); // if author has no perms
         	var kickedmember = message.mentions.members.first(); // sets the mentioned user to the var kickedmember
         	if (!kickedmember) return message.reply("Please mention a valid member of this server!") // if there is no kickedmmeber var
         	if (!kickedmember.kickable) return message.reply("I cannot kick this member!") // if the member is unkickable

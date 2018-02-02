@@ -201,6 +201,9 @@ bot.on("message", function(message) {
 		break;
 	case "kick":
 		    message.channel.send("**In maintenance, please wait for freshie to add the command!**")
+	case "whosyourdada":
+		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
+		    break;
     }
 });
 

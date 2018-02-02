@@ -157,7 +157,6 @@ bot.on("message", function(message) {
     });
             break;
 	case "dab":
-	message.delete().catch(O_o=>{});
     message.channel.send("**<o/**", {
         file: (dab[Math.floor(Math.random() * dab.length)])
     });

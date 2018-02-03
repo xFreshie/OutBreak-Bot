@@ -209,7 +209,7 @@ bot.on("message", function(message) {
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;
 	case "pizza":
-		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man")
+		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
     }	    
 });

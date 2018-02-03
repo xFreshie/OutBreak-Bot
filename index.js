@@ -60,6 +60,10 @@ var roast = [
 var dab = [
 	'https://media.giphy.com/media/d4blihcFNkwE3fEI/giphy.gif'
 ]
+
+var pizza = [
+	'https://i.imgur.com/Kp3DeAr.png'
+]
  
 var bot = new Discord.Client();
  
@@ -204,6 +208,9 @@ bot.on("message", function(message) {
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;
+	case "pizza":
+		    message.channel.send(":pizza:", {
+			    file: (pizza[Math.floor(Math.random() * pizza.length)])
     }
 });
 

@@ -14,7 +14,7 @@ clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
 db.fetchObject(`guildPrefix_${message.guild.id}`).then(i => }
-						       
+	
   let prefix;
 
   if (i.text)

@@ -13,7 +13,6 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
-const PREFIX = "-";
 
 var fortunes = [
     "Yes",
@@ -21,6 +20,15 @@ var fortunes = [
     "Maybe",
     "fucc you"
 ];
+
+var guilds = {};
+
+client.on("message", message => {
+
+  try{
+      if (!guilds[message.guild.id]) {
+          guilds[message.guild.id] = {
+              prefix: "-" // default prefix, change it to fit your needs
  
 var fortunes2 = [
     "Do you kno da wae brudda",

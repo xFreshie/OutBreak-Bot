@@ -208,6 +208,25 @@ bot.on("message", function(message) {
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;
+	case "shoot":
+		    exports.run = function (bot, msg) {
+    if (msg.mentions.users.size < 1) {
+        throw '@mention some people to shoot!';
+    }
+
+    let output = msg.mentions.users.map(m => `**${m}** :gun:`).join('\n');
+
+    msg.delete();
+    msg.channel.send({
+        embed: bot.utils.embed(`${bot.user.username} is on a killing spree!`, output)
+    });
+};
+
+exports.info = {
+    name: 'shoot',
+    usage: 'shoot <user>',
+    description: 'Shoots yer friendz!'
+};
     }
 });
 

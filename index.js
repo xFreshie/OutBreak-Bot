@@ -211,7 +211,7 @@ bot.on("message", function(message) {
     	case "pizza":
     message.channel.send(":pizza", {
 	    file: (pizza[Math.floor(Math.random() * pizza.length)])
-    }
+    })
 });
 
 bot.login(process.env.BOT_TOKEN);

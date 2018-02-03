@@ -28,8 +28,21 @@ client.on("message", message => {
   try{
       if (!guilds[message.guild.id]) {
           guilds[message.guild.id] = {
-              prefix: "-" // default prefix, change it to fit your needs
- 
+              prefix: "." // default prefix, change it to fit your needs
+          };
+      }
+  } catch (e) {
+    console.log(e);
+  }
+
+  if (message.author.bot) return; // ignore any bots
+  const prefix = guilds[message.guild.id].prefix; // multi-guild (will come back to this later)
+  const args = message.content.split(" ");
+  let command = args[0];
+  command = command.slice(prefix.length);
+  if(!message.content.startsWith(prefix)) return; // ignore messages without a prefix
+  if(message.channel.type === 'dm') return message.reply("You cant use me in PM."); // prevent commands via dm
+	
 var fortunes2 = [
     "Do you kno da wae brudda",
     "YOU SHALL NOT PASS",

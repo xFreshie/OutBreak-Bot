@@ -13,7 +13,6 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
-const prefix = guilds[message.guild.id].prefix;
 
 var fortunes = [
     "Yes",
@@ -37,6 +36,7 @@ client.on("message", message => {
   }
 
   if (message.author.bot) return; // ignore any bots
+  const prefix = guilds[message.guild.id].prefix
   const args = message.content.split(" ");
   let command = args[0];
   command = command.slice(prefix.length);

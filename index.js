@@ -13,15 +13,7 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
-db.fetchObject(`guildPrefix_${message.guild.id}`).then(i => }
-	
-  let prefix;
-
-  if (i.text)
-    prefix = i.text
-  } else {
-    prefix = '-'
-  }
+const prefix = "-"
 
 var fortunes = [
     "Yes",
@@ -218,16 +210,6 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
- 	case "setprefix":
-  	exports.run = (bot, message, args, func) => {
-    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('This require you to have an Admin role.');
-    if (args.join(" ")) return message.channel.send('Please enter arguments. "setprefix <prefix>"');
-
-    db.updateText(`guildPrefix_${message.guild.id}`, args.join().trin()).then(i => {
-        message.channel.send('Prefix changed to ' + i.text);
-    })
-
-}
     }	    
 });
 

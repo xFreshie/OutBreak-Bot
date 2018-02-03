@@ -13,6 +13,7 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
+const prefix = "-"
 
 var fortunes = [
     "Yes",
@@ -20,29 +21,6 @@ var fortunes = [
     "Maybe",
     "fucc you"
 ];
-
-var guilds = {};
-
-client.on("message", message => {
-
-  try{
-      if (!guilds[message.guild.id]) {
-          guilds[message.guild.id] = {
-              prefix: "." // default prefix, change it to fit your needs
-          };
-      }
-  } catch (e) {
-    console.log(e);
-  }
-
-  if (message.author.bot) return; // ignore any bots
-  const prefix = guilds[message.guild.id].prefix
-  const args = message.content.split(" ");
-  let command = args[0];
-  command = command.slice(prefix.length);
-  if(!message.content.startsWith(prefix)) return; // ignore messages without a prefix
-  if(message.channel.type === 'dm') return message.reply("You cant use me in PM."); // prevent commands via dm
-})
 	
 var fortunes2 = [
     "Do you kno da wae brudda",
@@ -232,11 +210,6 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
-	case "setprefix":
- 		if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(`__**Access Denied**__\nYou must have __MANAGE_GUILD__ perms to use this command.`); // Checks for permissions to change the prefix
-  		const newPrefix = args.slice(1).join(" "); // define the prefix
- 		guilds[message.guild.id].prefix = newPrefix; // set the prefix
-  			message.channel.send(`The prefix for **${message.guild.name}** is now **${newPrefix}**`); // reply with the new sexy prefix!
     }	    
 });
 

@@ -208,9 +208,9 @@ bot.on("message", function(message) {
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;
-	case "pizza":
-		    message.channel.send(":pizza:", {
-			    file: (pizza[Math.floor(Math.random() * pizza.length)])
+    	case "pizza":
+    message.channel.send("***:pizza:***", {
+        file: (pizza[Math.floor(Math.random() * pizza.length)])
     }
 });
 

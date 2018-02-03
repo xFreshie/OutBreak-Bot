@@ -36,11 +36,11 @@ client.on("message", message => {
   }
 
   if (message.author.bot) return; // ignore any bots
-  const PREFIX = guilds[message.guild.id].prefix; // multi-guild (will come back to this later)
+  const prefix = guilds[message.guild.id].prefix; // multi-guild (will come back to this later)
   const args = message.content.split(" ");
   let command = args[0];
-  command = command.slice(PREFIX.length);
-  if(!message.content.startsWith(PREFIX)) return; // ignore messages without a prefix
+  command = command.slice(prefix.length);
+  if(!message.content.startsWith(prefix)) return; // ignore messages without a prefix
   if(message.channel.type === 'dm') return message.reply("You cant use me in PM."); // prevent commands via dm
 })
 	
@@ -119,9 +119,9 @@ bot.on("message", function(message) {
     //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
     // --------------------------------------------
    
-    if (!message.content.startsWith(PREFIX)) return;
+    if (!message.content.startsWith(prefix)) return;
    
-    var args = message.content.substring(PREFIX.length).split(" ");
+    var args = message.content.substring(prefix.length).split(" ");
     console.log(`(ChromeCommand) ${message.author.id}: ${message.content}`);
     switch (args[0].toLowerCase()) {
         case"ping":

@@ -36,11 +36,11 @@ client.on("message", message => {
   }
 
   if (message.author.bot) return; // ignore any bots
-  const prefix = guilds[message.guild.id].prefix; // multi-guild (will come back to this later)
+  const PREFIX = guilds[message.guild.id].prefix; // multi-guild (will come back to this later)
   const args = message.content.split(" ");
   let command = args[0];
-  command = command.slice(prefix.length);
-  if(!message.content.startsWith(prefix)) return; // ignore messages without a prefix
+  command = command.slice(PREFIX.length);
+  if(!message.content.startsWith(PREFIX)) return; // ignore messages without a prefix
   if(message.channel.type === 'dm') return message.reply("You cant use me in PM."); // prevent commands via dm
 })
 	

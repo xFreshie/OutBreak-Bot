@@ -13,7 +13,16 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
-const prefix = "-"
+//Global settings
+    db.fetchObject(`guildPrefix_${message.guild.id}`).then(i => { // This fetches the current prefix, if none is supplied it would be an empty string.
+
+        let prefix;
+
+        if (i.text) { // This will run if i.text(exisiting prefix) is defined...
+            prefix = i.text
+        } else { // This will run if i.text(existing prefix) is not defined...
+            prefix = '~' // You can set this to your default prefix
+        }
 
 var fortunes = [
     "Yes",

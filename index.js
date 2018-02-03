@@ -152,7 +152,7 @@ bot.on("message", function(message) {
         message.channel.send(message.author.toString() + " Hi senpaii~~ ");
         break;
     case "help":
-		message.channel.send('**=== Help ===**\n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-noticeme** = Notices you.\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\nType **-economy** for banking commands \n```Please use - as the prefix```\n**Special thanks to Eshan for helping me out!**');
+		message.channel.send('**=== Help ===**\n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-noticeme** = Notices you.\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada* = you know\n **-pizza** = You know this too lol\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\nType **-economy** for banking commands \n```Please use - as the prefix```\n**Special thanks to Eshan for helping me out!**');
         break;
     case "meme":
 	message.delete().catch(O_o=>{});

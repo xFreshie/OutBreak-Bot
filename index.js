@@ -13,29 +13,7 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
-
-
-var guilds = {};
-
-client.on("message", message => {
-
-  try{
-      if (!guilds[message.guild.id]) {
-          guilds[message.guild.id] = {
-              prefix: "-" // default prefix, change it to fit your needs
-          };
-      }
-  } catch (e) {
-    console.log(e);
-  }
-
-  if (message.author.bot) return; // ignore any bots
-  const prefix = guilds[message.guild.id].prefix; // multi-guild (will come back to this later)
-  const args = message.content.split(" ");
-  let command = args[0];
-  command = command.slice(prefix.length);
-  if(!message.content.startsWith(prefix)) return; // ignore messages without a prefix
-  if(message.channel.type === 'dm') return message.reply("You cant use me in PM."); // prevent commands via dm
+const PREFIX = "-";
 
 var fortunes = [
     "Yes",

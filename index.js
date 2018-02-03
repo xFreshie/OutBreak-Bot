@@ -208,10 +208,11 @@ bot.on("message", function(message) {
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;
-    	case "pizza":
-   		 message.channel.send(":pizza", {
-	    file: (pizza[Math.floor(Math.random() * pizza.length)])
-			 break;
+    	case "meme":
+	message.delete().catch(O_o=>{});
+    	message.channel.send("***Danke ME ME***", {
+        file: (memelist[Math.floor(Math.random() * memelist.length)]);
+		break;
     }
 });
 

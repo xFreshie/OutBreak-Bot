@@ -97,9 +97,9 @@ bot.on("message", function(message) {
     //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
     // --------------------------------------------
    
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(PREFIX)) return;
    
-    var args = message.content.substring(prefix.length).split(" ");
+    var args = message.content.substring(PREFIX.length).split(" ");
     console.log(`(ChromeCommand) ${message.author.id}: ${message.content}`);
     switch (args[0].toLowerCase()) {
         case"ping":

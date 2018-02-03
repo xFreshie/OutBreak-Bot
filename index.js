@@ -211,6 +211,7 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man")
 		    break;
+    }	    
 });
 
 bot.login(process.env.BOT_TOKEN);

@@ -75,7 +75,7 @@ bot.on('ready', () => {
     console.log('Author = xFreshie & Eshan');
     console.log('-=-=-=-=-=-=-=-');
     bot.user.setActivity('With Freshan!')
-    bot.user.setStatus("online")
+    bot.user.setStatus("streaming")
   });
  
 bot.on("message", function(message) {

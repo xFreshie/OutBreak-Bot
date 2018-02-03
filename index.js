@@ -42,6 +42,7 @@ client.on("message", message => {
   command = command.slice(prefix.length);
   if(!message.content.startsWith(prefix)) return; // ignore messages without a prefix
   if(message.channel.type === 'dm') return message.reply("You cant use me in PM."); // prevent commands via dm
+}
 	
 var fortunes2 = [
     "Do you kno da wae brudda",

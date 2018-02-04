@@ -212,7 +212,6 @@ bot.on("message", function(message) {
 		    break;
 	case "love":
 		    if (!message.mentions.members.first()
-			    reply message.channel.send("Usage -love @mention"))
 		    message.channel.send(message.author.username "loves" member.user.username);
 		    break;
     }	    

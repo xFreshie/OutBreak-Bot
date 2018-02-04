@@ -210,10 +210,10 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
-	client.on("message", (message) => {
-  		if (message.content.startsWith("hello")) {
-   		 message.channel.send("Hey!");
-    }	    
+client.on("message", (message) => {
+  if (message.content.startsWith("Hello")) {
+    message.channel.send("Hey!");
+  }
 });
 
 bot.login(process.env.BOT_TOKEN);

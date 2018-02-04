@@ -211,7 +211,6 @@ bot.on("message", function(message) {
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
 	case "love":
-		    if (!message.mentions.members.first()
 		    message.channel.send(message.author.username "loves" member.user.username);
 		    break;
     }	    

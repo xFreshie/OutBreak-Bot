@@ -210,8 +210,9 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
-	if (message === "hello")
-		message.reply("hey!")
+	client.on("message", (message) => {
+  		if (message.content.startsWith("hello")) {
+   		 message.channel.send("Hey!");
     }	    
 });
 

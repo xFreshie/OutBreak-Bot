@@ -210,7 +210,7 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
-	if (command === 'blah') {
+	if (message === 'blah') {
  	 message.channel.send('Meh.');
 	}
   }

@@ -17,8 +17,7 @@ const PREFIX = "-"
 let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
 
 client.on("message", message => {
-  if (!message.content.startsWith(prefix)) return;
-  if (message.author.bot) return;
+	if (message.author.bot) return;
 
   if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
@@ -34,7 +33,7 @@ client.on("message", message => {
     message.reply(`You"ve leveled up to level **${curLevel}**! Ain"t that dandy?`);
   }
 
-  if (message.content.startsWith(prefix + "level")) {
+	case "level":
     message.reply(`You are currently level ${userData.level}, with ${userData.points} points.`);
   }
   fs.writeFile("./points.json", JSON.stringify(points), (err) => {

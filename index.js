@@ -210,29 +210,9 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
-const sql = require("sqlite");
-sql.open("./score.sqlite");
-
-client.on("message", message => {
-  if (message.author.bot) return;
-  if (message.channel.type !== "text") return;
-    if (message.content.startsWith("ping")) {
-    message.channel.send("pong!");
-  }
-  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
-    if (!row) {
-      sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
-    } else {
-      sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
-    }
-  }).catch(() => {
-    console.error;
-    sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
-      sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
-    });
-  });
-});
-		    
+	if (message === 'blah') {
+	  message.channel.send('Meh.');
+		break;
   }
 });
 

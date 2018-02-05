@@ -210,31 +210,29 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
-let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
+const sql = require("sqlite");
+sql.open("./score.sqlite");
 
 client.on("message", message => {
-  if (!message.content.startsWith(prefix)) return;
   if (message.author.bot) return;
-
-  if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-    level: 0
-  };
-  let userData = points[message.author.id];
-  userData.points++;
-
-  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-  if (curLevel > userData.level) {
-    // Level up!
-    userData.level = curLevel;
-    message.reply(`You"ve leveled up to level **${curLevel}**! Ain"t that dandy?`);
+  if (message.channel.type !== "text") return;
+    if (message.content.startsWith("ping")) {
+    message.channel.send("pong!");
   }
-
-  if (message.content.startsWith(prefix + "level")) {
-    message.reply(`You are currently level ${userData.level}, with ${userData.points} points.`);
-  }
-  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err);
+  sql.get(`SELECT * FROM scores WHERE userId ="${message.author.id}"`).then(row => {
+    if (!row) {
+      sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
+    } else {
+      sql.run(`UPDATE scores SET points = ${row.points + 1} WHERE userId = ${message.author.id}`);
+    }
+  }).catch(() => {
+    console.error;
+    sql.run("CREATE TABLE IF NOT EXISTS scores (userId TEXT, points INTEGER, level INTEGER)").then(() => {
+      sql.run("INSERT INTO scores (userId, points, level) VALUES (?, ?, ?)", [message.author.id, 1, 0]);
+    });
+  });
+});
+		    
   }
 });
 

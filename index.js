@@ -13,11 +13,12 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
 const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
-const PREFIX = "-"
+const PREFIX = "-";
 let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
 
 client.on("message", message => {
-	if (message.author.bot) return;
+  if (!message.content.startsWith(prefix)) return;
+  if (message.author.bot) return;
 
   if (!points[message.author.id]) points[message.author.id] = {
     points: 0,
@@ -33,12 +34,16 @@ client.on("message", message => {
     message.reply(`You"ve leveled up to level **${curLevel}**! Ain"t that dandy?`);
   }
 
-	case "level":
+  if (message.content.startsWith(prefix + "level")) {
     message.reply(`You are currently level ${userData.level}, with ${userData.points} points.`);
   }
   fs.writeFile("./points.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
+  });
 
+});
+
+	
 var fortunes = [
     "Yes",
     "No",

@@ -64,7 +64,7 @@ var pizza = [
 ]
 
 var wot = [
-	'https://media.giphy.com/media/bnyezSFll41he/giphy.gif'
+	'https://media.giphy.com/media/nipbykblMUnu0/giphy.gif'
 ]
  
 var bot = new Discord.Client();

@@ -235,9 +235,8 @@ let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
           }
           fs.writeFile("./points.json", JSON.stringify(points), (err) => {
             if (err) console.error(err)
-          });
-
-  }
+    });
+        
 });
 
 bot.login(process.env.BOT_TOKEN);

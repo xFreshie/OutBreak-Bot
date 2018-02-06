@@ -215,7 +215,7 @@ bot.on("message", function(message) {
 		    break;
 	case "uwot":
 	message.channel.send("**u wot m8 i besh ur hed**", {
-		file: (wot[Math.floor(Math.random() * wot.length)]);
+		file: (wot[Math.floor(Math.random() * wot.length)])
 		break;
     }	
 });		 	    

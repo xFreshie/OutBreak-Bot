@@ -237,5 +237,8 @@ client.on("message", message => {
     if (err) console.error(err)
   });
 
+	
 });
+		    
+		    
 bot.login(process.env.BOT_TOKEN);

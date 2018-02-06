@@ -62,6 +62,10 @@ var dab = [
 var pizza = [
 	'https://i.imgur.com/Kp3DeAr.png'
 ]
+
+var wot = [
+	'https://media.giphy.com/media/bnyezSFll41he/giphy.gif'
+]
  
 var bot = new Discord.Client();
  
@@ -209,6 +213,9 @@ bot.on("message", function(message) {
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
+	case "uwot":
+		        message.channel.send("**u wot m8 i besh ur hed**", {
+        file: (wot[Math.floor(Math.random() * wot.length)])
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

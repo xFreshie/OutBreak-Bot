@@ -218,13 +218,6 @@ bot.on("message", function(message) {
         file: (wot[Math.floor(Math.random() * wot.length)])
     });
 		    break;
-	case "nsfw"
-	console.log(message.channel.nsfw); // false
-
- 	 if (message.channel.nsfw === false) {
-   	 return message.reply(":warning: This channel isn't marked as NSFW.");
- 	 }
-	}
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

@@ -179,6 +179,7 @@ bot.on("message", function(message) {
 				economy.updateBalance(memberzz.user.id , args[2]).then((i) => { 
 				message.channel.send(`**You Sent ${memberzz.user.username} `+args[2]+`**\n**New Balance:** ${i.money}`);
 				})
+				 
 			}
 			else {
 				message.reply(', You dont have the Permission to use that Command..')
@@ -201,11 +202,15 @@ bot.on("message", function(message) {
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
 	case "say":
-		    if(message.member.hasPermission("MANAGE_MESSAGES")); return message.reply("You do not have permission to use that command")
+		     if(message.member.hasPermission("MANAGE_MESSAGES")){
         	var sayMessage = message.content.substring(4)
         	message.delete().catch(O_o=>{});
         	message.channel.send(sayMessage);
-		break;
+			}
+			else {
+				message.reply(', You dont have the Permission to use that Command..')
+			}
+			break;
 	case "kick":
 		    message.channel.send("**In maintenance, please wait for freshie to add the command!**")
 	case "whosyourdada":

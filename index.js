@@ -208,7 +208,7 @@ bot.on("message", function(message) {
         	message.channel.send(sayMessage);
 			}
 			else {
-				message.reply(', You dont have the Permission to use that Command..')
+				message.reply('``You dont have the Permission to use that Command``')
 			}
 			break;
 	case "kick":

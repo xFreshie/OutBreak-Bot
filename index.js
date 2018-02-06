@@ -214,8 +214,9 @@ bot.on("message", function(message) {
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")
 		    break;
 	case "uwot":
-		        message.channel.send("**u wot m8 i besh ur hed**", {
-        file: (wot[Math.floor(Math.random() * wot.length)])
+	message.channel.send("**u wot m8 i besh ur hed**", {
+		file: (wot[Math.floor(Math.random() * wot.length)]);
+		break;
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

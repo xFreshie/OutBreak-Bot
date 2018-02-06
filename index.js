@@ -12,7 +12,6 @@ const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
  
-const TOKEN = "NDA1ODE1Mzk3MzgwNTIxOTk0.DUp4lQ.B5vdI0GNeWIXc6Dikl4e6QjhxaA";
 const PREFIX = "-";
 	
 var fortunes = [

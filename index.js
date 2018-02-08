@@ -77,7 +77,8 @@ bot.on('ready', () => {
     console.log('Status = Successfully Started');
     console.log('Author = xFreshie & Eshan');
     console.log('-=-=-=-=-=-=-=-');
-    client.user.setGame(`on ${client.guilds.size} servers`);
+    bot.user.setActivity('With Freshan!');
+    bot.user.setStatus("online")
   });
  
 bot.on("message", function(message) {

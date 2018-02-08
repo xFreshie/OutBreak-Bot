@@ -77,8 +77,8 @@ bot.on('ready', () => {
     console.log('Status = Successfully Started');
     console.log('Author = xFreshie & Eshan');
     console.log('-=-=-=-=-=-=-=-');
-    bot.user.setActivity('With Freshan!')
-    bot.user.setStatus("streaming")
+    bot.user.setActivity('With Freshan | ${client.guilds.size} servers')
+    bot.user.setStatus("Online")
   });
  
 bot.on("message", function(message) {

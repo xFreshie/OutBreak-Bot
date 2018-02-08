@@ -224,6 +224,8 @@ bot.on("message", function(message) {
         file: (wot[Math.floor(Math.random() * wot.length)])
     });
 		    break;
+	case "guilds":
+		    message.channel.send('on ${client.guilds.size} servers')
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

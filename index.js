@@ -225,7 +225,7 @@ bot.on("message", function(message) {
     });
 		    break;
 	case "guilds":
-		    message.channel.send(${client.guilds.size})
+		    message.channel.send(client.guilds.size)
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

@@ -10,7 +10,7 @@ const economy = require('discord-eco');
 const fs = require('fs');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
-clbot.configure({botapi: "CC6i4V4r2xG7MLyh1Ll9i_BoMhw"});
+clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
  
 const PREFIX = "-";
 	

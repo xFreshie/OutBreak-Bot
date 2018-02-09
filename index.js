@@ -239,7 +239,6 @@ bot.on("message", function(message) {
     		// rebooting before we have a chance to.
    		 msg.edit('Prefix set, rebooting! :ok_hand:');
 		};
-			break;
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

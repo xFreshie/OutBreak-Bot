@@ -242,9 +242,6 @@ bot.on("message", function(message) {
         }else {
           message.channel.send(lib.embed(`**ERROR:** Insufficient permissions to perform that command\n**Required Role:** \`Admin\``,message));
         }
-      }else {
-        message.channel.send(lib.embed(`**ERROR:** Failed to specify a parameter, i.e. ${guildPrefix}setprefix [newprefix]`,message));
-      }
 				
     }	
 });		 	    

@@ -245,21 +245,7 @@ bot.on("message", function(message) {
       }else {
         message.channel.send(lib.embed(`**ERROR:** Failed to specify a parameter, i.e. ${guildPrefix}setprefix [newprefix]`,message));
       }
-    }else {
-      message.channel.send(lib.embed(`**ERROR:** Guild must have a role titled \`Admin\` to use this command`,message));
-    }
-  }
-
-  controls(guildsMap,client,message){
-    message.react('⏯').then(r => {
-        message.react('⏹').then(r => {
-          message.react('🔁').then(r => {
-            message.react('❌').then(r => {
-            })
-          })
-        })
-    })
-  }
+				
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

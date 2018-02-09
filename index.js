@@ -231,7 +231,7 @@ bot.on("message", function(message) {
 	    case "setprefix":
 		        if (args.length < 1) {
         throw 'Please provide a prefix to set!';
-    }
+    })
 
     const prefix = args.join(' ');
     bot.managers.config.set('prefix', prefix);

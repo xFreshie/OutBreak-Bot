@@ -229,16 +229,37 @@ bot.on("message", function(message) {
 		    break;
 //Set Prefix commands | BETTER NOT TOUCH THIS
 	    case "setprefix":
-		        if (args.length < 1) {
-        throw 'Please provide a prefix to set!';
-    })
+		        if(message.member.hasPermission("ADMINISTRATOR")){
+      var newprefix = args.join('');
+      if(newprefix){
+        var admins = message.guild.roles.find('name', 'Admin').members;
+        if (admins.has(message.author.id) || lib.checkOwner(message)) {
+          // set the prefix here
+          guildsMap.set(message.guild.id,{prefix:newprefix});
+          message.channel.send(lib.embed(`**SUCCESS:** Now listening for the prefix: \`${newprefix}\``,message));
+          lib.writeMapToFile(guildsMap);
+          // end prefix
+        }else {
+          message.channel.send(lib.embed(`**ERROR:** Insufficient permissions to perform that command\n**Required Role:** \`Admin\``,message));
+        }
+      }else {
+        message.channel.send(lib.embed(`**ERROR:** Failed to specify a parameter, i.e. ${guildPrefix}setprefix [newprefix]`,message));
+      }
+    }else {
+      message.channel.send(lib.embed(`**ERROR:** Guild must have a role titled \`Admin\` to use this command`,message));
+    }
+  }
 
-    const prefix = args.join(' ');
-    bot.managers.config.set('prefix', prefix);
-    // No point trying to delete this message, the bot will be
-    // rebooting before we have a chance to.
-    msg.edit('Prefix set, rebooting! :ok_hand:');
-};
+  controls(guildsMap,client,message){
+    message.react('⏯').then(r => {
+        message.react('⏹').then(r => {
+          message.react('🔁').then(r => {
+            message.react('❌').then(r => {
+            })
+          })
+        })
+    })
+  }
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

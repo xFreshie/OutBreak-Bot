@@ -229,20 +229,8 @@ bot.on("message", function(message) {
 		    break;
 //Set Prefix commands | BETTER NOT TOUCH THIS
 	    case "setprefix":
-		        if(message.member.hasPermission("ADMINISTRATOR")){
-      var newprefix = args.join('');
-      if(newprefix){
-        var admins = message.guild.roles.find('name', 'Admin').members;
-        if (admins.has(message.author.id) || lib.checkOwner(message)) {
-          // set the prefix here
-          guildsMap.set(message.guild.id,{prefix:newprefix});
-          message.channel.send(lib.embed(`**SUCCESS:** Now listening for the prefix: \`${newprefix}\``,message));
-          lib.writeMapToFile(guildsMap);
-          // end prefix
-        }else {
-          message.channel.send(lib.embed(`**ERROR:** Insufficient permissions to perform that command\n**Required Role:** \`Admin\``,message));
-        }
-				
+		    message.channel.send("``In maintenance``")
+		    break;
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

@@ -272,11 +272,6 @@ bot.on("message", function(message) {
     
    		 if (server.dispatcher) server.dispatcher.end();
    		 break;
-	case "stop":
-    		var server = servers[message.guild.id];
-    
-   	 	if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
-   	 	break;
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

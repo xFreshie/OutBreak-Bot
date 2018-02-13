@@ -86,7 +86,7 @@ bot.on("message", function(message) {
     if (message.author.equals(bot.user)) return;
     // -----------------------------------------
     //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this
-    var botidf = '<@405815397380521994>';
+    var botidf = '<@411810957258522624>';
     // var botidfl = botidf.toLowerCase();
     if (message.content.startsWith(botidf)) {
         clbot.write(message.content.split(20), (response) => {

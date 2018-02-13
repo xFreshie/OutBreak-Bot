@@ -245,33 +245,9 @@ bot.on("message", function(message) {
 		    message.channel.send("``In maintenance``")
 		    break;
 // Music Bot
-	case "play":
-		if (!args[1]) {
-        	message.channel.sendMessage("``Please provide a link``");
-        	return;
-       
-       	}
-       
-      	 if (!message.member.voiceChannel) {
-            	message.channel.sendMessage("``You must be in a voice channel.``");
-            	return;
-      	 }
-       
-       	if(!servers[message.guild.id]) servers[message.guild.id] = {
-          	  queue: []
-      	 );
-       
-       	var server = servers[message.guild.id];
-       
-       	if (!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection) {
-           	 play(connection, message);
-      	 }); 
-       	break;
-	case "skip":
-   	 	var server = servers[message.guild.id];
-    
-   		 if (server.dispatcher) server.dispatcher.end();
-   		 break;
+	    case "musicbot":
+		    message.channel.send("``Soon, but not soon enough.``")
+		    break;
     }	
 });		 	    
 bot.login(process.env.BOT_TOKEN);

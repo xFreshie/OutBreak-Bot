@@ -230,11 +230,12 @@ bot.on("message", function(message) {
 				message.reply('``You dont have the Permission to use that Command``')
 			}
 			break;
-client.on("message", (message) => {
-  if(responseObject[message.content]) {
-    message.channel.send(responseObject[message.content]);
-  }
-});
+		client.on("message", (message) => {
+  			if(responseObject[message.content]) {
+ 		   message.channel.send(responseObject[message.content]);
+		  }
+		});
+		    break;
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

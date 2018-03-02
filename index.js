@@ -15,6 +15,12 @@ clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
  
 const PREFIX = "-";
 
+const responseObject = {
+  "ayy": "Ayy, lmao!",
+  "wat": "Say what?",
+  "lol": "roflmaotntpmp"
+};
+
 function play (connection, message) {
     var server = servers[message.guild.id];
     
@@ -224,17 +230,11 @@ bot.on("message", function(message) {
 				message.reply('``You dont have the Permission to use that Command``')
 			}
 			break;
-		    client.on("message", (message) => {
- 			if(message.content === "ayy") {
-			    message.channel.send("Ayy, lmao!");
-			  }
-			  if(message.content === "wat") {
-			    message.channel.send("Say what?");
-			  }
-			  if(message.content === "lol") {
- 			   message.channel.send("roflmaotntpmp");
- 			 }
-			});	
+client.on("message", (message) => {
+  if(responseObject[message.content]) {
+    message.channel.send(responseObject[message.content]);
+  }
+});
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

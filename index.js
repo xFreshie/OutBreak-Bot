@@ -224,16 +224,17 @@ bot.on("message", function(message) {
 				message.reply('``You dont have the Permission to use that Command``')
 			}
 			break;
-	case "kick":
-		    if(message.member.hasPermission("KICK_MEMBERS")){
-			    var member = message.mentions.members.first();
-			    member.kick().then((member) => {
-				    message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-			}
-			else {
-				message.reply('``You dont have the Permission to use that Command``')
-			}
-		    	break;
+		    client.on("message", (message) => {
+ 			if(message.content === "ayy") {
+			    message.channel.send("Ayy, lmao!");
+			  }
+			  if(message.content === "wat") {
+			    message.channel.send("Say what?");
+			  }
+			  if(message.content === "lol") {
+ 			   message.channel.send("roflmaotntpmp");
+ 			 }
+			});	
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

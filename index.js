@@ -234,7 +234,6 @@ bot.on("message", function(message) {
         }).catch(() => {
              // Failmessage
             message.channel.send("Access Denied");
-		break;
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

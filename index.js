@@ -233,7 +233,7 @@ bot.on("message", function(message) {
 			else {
 				message.reply('``You dont have the Permission to use that Command``')
 			}
-			    
+		    	break;
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

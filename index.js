@@ -226,14 +226,14 @@ bot.on("message", function(message) {
 			break;
 	case "kick":
 		    if(message.member.hasPermission("KICK_MEMBERS")){
-        		var member= message.mentions.members.first();
-        // Kick
-        member.kick().then((member) => {
-            // Successmessage
-            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-        }).catch(() => {
-             // Failmessage
-            message.channel.send("Access Denied");
+			    var member = message.mentions.members.first();
+			    member.kick().then((member) => {
+				    message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+			}
+			else {
+				message.reply('``You dont have the Permission to use that Command``')
+			}
+			    
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

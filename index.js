@@ -225,18 +225,16 @@ bot.on("message", function(message) {
 			}
 			break;
 	case "kick":
-		      if (message.mentions.members.size === 0)
-   			 return message.reply("Please mention a user to kick");
-
- 			 if (!message.guild.me.hasPermission("KICK_MEMBERS"))
-   			 return message.reply("");
-
-			  const kickMember = message.mentions.members.first();
-
- 			 kickMember.kick(reason.join(" ")).then(member => {
- 			   message.reply(`${member.user.username} was succesfully kicked.`);
-		});
-		    break;
+		    if(message.member.hasPermission("KICK_MEMBERS")){
+        		var member= message.mentions.members.first();
+        // Kick
+        member.kick().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+		break;
 	case "whosyourdada":
 		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
 		    break;

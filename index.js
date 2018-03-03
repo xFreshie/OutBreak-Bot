@@ -215,10 +215,9 @@ bot.on("message", function(message) {
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
 	client.on("message", (message) => {
-	if (message.content == ('what'){
-	    message.channel.send("Say what?");
-    }
-		  });
+  if(message.content === "ayy") {
+    message.channel.send("Ayy, lmao!");
+  }
 	break;
 	case "say":
 		     if(message.member.hasPermission("MANAGE_MESSAGES")){

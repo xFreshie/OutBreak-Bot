@@ -215,8 +215,9 @@ bot.on("message", function(message) {
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
 	if (message.content == ('what'){
-      message.channel.send('Say What!');
-    };
+	    message.channel.send("Say what?");
+    }
+	break;
 	case "say":
 		     if(message.member.hasPermission("MANAGE_MESSAGES")){
         	var sayMessage = message.content.substring(4)

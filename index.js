@@ -214,6 +214,9 @@ bot.on("message", function(message) {
 	case "roast":
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
+	if (message.content == ('what'){
+      message.channel.send('Say What!');
+    };
 	case "say":
 		     if(message.member.hasPermission("MANAGE_MESSAGES")){
         	var sayMessage = message.content.substring(4)
@@ -253,13 +256,5 @@ bot.on("message", function(message) {
 		    message.channel.send("``Soon, but not soon enough.``")
 		    break;
     }	
-	if (message.content == ('wot'){
-      message.channel.send('Say What!');
-    }
-       break;
-	if (message.content == ('Gay'){
-      message.channel.send('no u frostbot');
-    }
-	break;
 });		 	    
 bot.login(process.env.BOT_TOKEN);

@@ -214,11 +214,9 @@ bot.on("message", function(message) {
 	case "roast":
 				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
 	break;
-	client.on("message", (message) => {
   if(message.content === "ayy") {
     message.channel.send("Ayy, lmao!");
   }
-	break;
 	case "say":
 		     if(message.member.hasPermission("MANAGE_MESSAGES")){
         	var sayMessage = message.content.substring(4)

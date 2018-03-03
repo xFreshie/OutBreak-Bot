@@ -234,7 +234,7 @@ bot.on("message", function(message) {
 		});
 		    break;
 	case "whosyourdada":
-		    message.channel.send("**MA DADDA IS FRESHIE AND MA MOMA IS ESHAN**")
+		    message.channel.send("**fresh is not my dada**")
 		    break;
 	case "pizza":
 		    message.channel.send(":pizza:\n**Did you expect a pizza image? nah man**")

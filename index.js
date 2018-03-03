@@ -15,12 +15,6 @@ clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
  
 const PREFIX = "-";
 
-const responseObject = {
-  "ayy": "Ayy, lmao!",
-  "wat": "Say what?",
-  "lol": "roflmaotntpmp"
-};
-
 function play (connection, message) {
     var server = servers[message.guild.id];
     
@@ -259,5 +253,13 @@ bot.on("message", function(message) {
 		    message.channel.send("``Soon, but not soon enough.``")
 		    break;
     }	
+	if (message.content == ('wot'){
+      message.channel.send('Say What!');
+    }
+       break;
+	if (message.content == ('Gay'){
+      message.channel.send('no u frostbot');
+    }
+	break;
 });		 	    
 bot.login(process.env.BOT_TOKEN);

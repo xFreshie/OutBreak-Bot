@@ -291,7 +291,6 @@ client.on("message", (message) => {
   if(message.content === "lol") {
     message.channel.send("roflmaotntpmp");
   }
-});
 
 });
 

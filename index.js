@@ -1,6 +1,11 @@
 // Load up the discord.js library
 const Discord = require("discord.js");
-
+//ChatBot Configs
+const clbot = new Cleverbot;
+clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
+const Cleverbot = require("cleverbot-node");
+const fs = require('fs');
+const sql = require("sqlite");
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
@@ -50,6 +55,76 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
+  //Vars
+  
+  var fortunes = [
+    "Yes",
+    "No",
+    "Maybe",
+    "fucc you"
+];
+  
+  var fortunes2 = [
+    "Do you kno da wae brudda",
+    "YOU SHALL NOT PASS",
+    ":cat:",
+    "Kappa",
+    "Le me show u da wae"
+];
+var memelist = [
+    'https://fthmb.tqn.com/-fP8YHAc27tYnXQCTXimB1VHI64=/1600x1487/filters:no_upscale():fill(FFCC00,1)/overlyattached-5900fa4a3df78c54563e3d8b.jpg',
+    'https://media.discordapp.net/attachments/350685728688177154/404585410916777995/mem6.jpg?width=550&height=437',
+    'http://quotesnhumor.com/wp-content/uploads/2014/11/Funniest-Memes-of-the-week-Funnies-Humor.jpg',
+    'https://memegenerator.net/img/instances/81083705/wtf-boys-somebody-forget-their-manners-wheres-my-fuckin-spaghetti.jpg',
+    'https://memegenerator.net/img/instances/500x/60313342/the-secret-to-my-spaghetti-is-the-milk-from-my-well-you-know-where-.jpg',
+    'https://pics.me.me/r-spaghetti-u-meat-u2-ny-alls-who-wants-to-6607599.png',
+    'https://www.happynewyear2018x.com/wp-content/uploads/2017/12/happy-new-year-meme-2018.jpg',
+    'https://i.ytimg.com/vi/oPFQR5DTpAI/maxresdefault.jpg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3hEDfTabBtoGso3XxRnn5M8eCy-wIuiEZZFKJh2xG1C6mwAvj',
+    'https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif',
+    'https://media.giphy.com/media/l0CLTK3YV3ImVmJfa/giphy.gif'
+]
+
+var roast = [
+	"You called me ugly?, Excuse me, I'm not a mirror.",
+	"I'd give you a nasty look, but you've already got one.",
+	"If laughter is the best medicine, your face must be curing the world.",
+	"It looks like your face caught fire and someone tried to put it out with a hammer. ",
+	"Your lips keep moving but all I hear is Blah, blah, blah.",
+	"Your family tree must be a cactus because everyone on it is a prick.",
+	"You'll never be the man your mother is.",
+	"Did you know they used to be called Jumpolines until your mum jumped on one?",
+	"Just because you have one doesn't mean you need to act like one. ",
+	"If you really want to know about mistakes, you should ask your parents."
+]
+
+var dab = [
+	'https://media.giphy.com/media/d4blihcFNkwE3fEI/giphy.gif'
+]
+
+var pizza = [
+	'https://i.imgur.com/Kp3DeAr.png'
+]
+
+var wot = [
+	'https://media.giphy.com/media/nipbykblMUnu0/giphy.gif'
+]
+  //Lets do the chatbot
+   // -----------------------------------------
+    //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this
+    var botidf = '<@411810957258522624>';
+    // var botidfl = botidf.toLowerCase();
+    if (message.content.startsWith(botidf)) {
+        clbot.write(message.content.split(20), (response) => {
+          message.channel.startTyping();
+          setTimeout(() => {
+            message.channel.send(response.output).catch(console.error);
+            message.channel.stopTyping();
+          }, Math.random() * (1 - 3) + 1 * 1000);
+        });
+    }
+    //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
+    // --------------------------------------------
   // Let's go with a few common example commands! Feel free to delete or change those.
   
   if(command === "ping") {
@@ -131,6 +206,87 @@ client.on("message", async message => {
     const fetched = await message.channel.fetchMessages({count: deleteCount});
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+  }
+  
+  if(command === "8ball") {
+    if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
+    else message.channel.send("Please mention a **question** to answer.");
+  }
+  
+  if(command === "userinfo") {
+            var embed = new Discord.RichEmbed()
+            .setAuthor(message.author.username)
+            .setDescription("This is the user's info!")
+            .setColor("#9B59B6")
+            .addField("Full Username", `${message.author.username}#${message.author.discriminator}`)
+            .addField("ID", message.author.id)
+            .addField("Created At", message.author.createdAt);
+        message.channel.send(embed);
+  }
+  
+  if(command === "botinfo") {
+			let bicon = bot.user.displayAvatarURL;
+			let botembed = new Discord.RichEmbed()
+			.setDescription("**Bot Information**")
+			.setColor("#072ebc")
+			.setThumbnail(bicon)
+			.addField("Bot Name", bot.user.username)
+			.addField("Bot info", "I'm an A.I Bot created by **xFreshie and Eshan**. Please use **-help** to check my commands. Have fun :wink:")
+			.addField("Created on", bot.user.createdAt);
+            message.channel.send(botembed);
+  }
+  
+  if(command === "serverinfo") {
+			let sicon = message.guild.displayAvatarURL;
+			let serverembed = new Discord.RichEmbed()
+			.setDescription("**Server information**")
+			.setColor("#072ebc")
+			.setThumbnail(sicon)
+			.addField("Server Name", message.guild.name)
+			.addField("Created On", message.guild.createdAt)
+			.addField("You joined", message.member.joinedAt)
+			.addField("Total Members", message.guild.memberCount);
+			message.channel.send(serverembed);
+  }
+  
+  if(command === "help") {
+    	message.channel.send('**=== Help ===**\n\n**Note:** Please use ``-staffcommands`` for staff commands. \n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada** = you know\n **-pizza** = You know this too lol\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\n```Please use - as the prefix```\n**Special thanks to Ethan for helping me out!**');
+        break;
+  }
+  
+  if(command === "meme") {
+	message.delete().catch(O_o=>{});
+    message.channel.send("***Danke ME ME***", {
+        file: (memelist[Math.floor(Math.random() * memelist.length)])
+    });
+  }
+  
+  if(command === "dab") {
+    message.channel.send("**<o/**", {
+        file: (dab[Math.floor(Math.random() * dab.length)])
+    });
+  }
+  
+  if(command === "roast") {
+    				message.channel.send(roast[Math.floor(Math.random() * roast.length)]);
+  }
+  
+  if(command === "whosyourdada") {
+    message.channel.send("who's your brudda, does he kno da wae?");
+  }
+  
+  if (command === "pizza") {
+    message.channel.send("There is only one pizza... i mean 2 pizzas left.\nOne is this one :pizza: and one is aland...");
+  }
+  
+  if(command === "uwot") {
+    message.channel.send("**u wot m8 i besh yur hed**", {
+        file: (wot[Math.floor(Math.random() * wot.length)])
+    });
+  }
+  
+  if (command === "staffcommands") {
+    message.channel.send("**=-=-=-Staff Help=-=-=-=**\n-kick \n -ban \n-purge\n ``These are the only commands for now.``");
   }
 });
 

@@ -90,10 +90,11 @@ bot.on('ready', () => {
     console.log('Status = Successfully Started');
     console.log('Author = xFreshie & Eshan');
     console.log('-=-=-=-=-=-=-=-');
-    bot.user.setActivity('With Freshan!');
     bot.user.setStatus("online")
   });
- 
+
+  client.user.setGame(`on ${client.guilds.size} servers`);
+});
 bot.on("message", function(message) {
     console.log(`(General) ${message.author.id}: ${message.content}`);
     if (message.author.equals(bot.user)) return;

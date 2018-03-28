@@ -150,8 +150,7 @@ var wot = [
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+   if(message.member.hasPermission("MANAGE_MESSAGES")){
     
     // Let's first check if we have a member and if we can kick them!
     // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
@@ -170,13 +169,15 @@ var wot = [
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
-
+   }
+	  else {
+		  message.reply("Sorry, you don't have enough permissions.");
   }
   
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["Administrator"].includes(r.name)) )
+      if(message.member.hasPermission("MANAGE_MESSAGES")){
       return message.reply("Sorry, you don't have permissions to use this!");
     
     let member = message.mentions.members.first();
@@ -192,11 +193,14 @@ var wot = [
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
+      }
+	  else {
+		  message.reply("Sorry, you don't have enough permissions.");
   }
   
   if(command === "purge") {
     // This command removes all messages from all users in the channel, up to 100.
-    
+	     if(message.member.hasPermission("MANAGE_MESSAGES")){
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
     
@@ -213,6 +217,9 @@ var wot = [
   if(command === "8ball") {
     if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
     else message.channel.send("Please mention a **question** to answer.");
+  }
+	  else {
+		  message.reply("Sorry, you don't have enough permissions.");
   }
   
   if(command === "userinfo") {

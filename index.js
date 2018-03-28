@@ -15,21 +15,6 @@ clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
  
 const PREFIX = "-";
 
-function play (connection, message) {
-    var server = servers[message.guild.id];
-    
-    server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly"}));
-    
-    server.queue.shift();
-    
-    server.dispatcher.on("end", function() {
-        if (server.queue[0]) play(connection, message);
-        else connection.disconnect();
-    });
-}
-
-var servers = {};
-
 var fortunes = [
     "Yes",
     "No",
@@ -84,15 +69,12 @@ var wot = [
 ]
  
 var bot = new Discord.Client();
- 
-bot.on('ready', () => {
-    console.log('-=-=-=-=-=-=-=-');
-    console.log('Status = Successfully Started');
-    console.log('Author = xFreshie & Eshan');
-    console.log('-=-=-=-=-=-=-=-');
-    bot.user.setStatus("online")
-  });
 
+client.on("ready", () => {
+  // This event will run if the bot starts, and logs in, successfully.
+  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
+  // Example of changing the bot's playing game to something useful. `client.user` is what the
+  // docs refer to as the "ClientUser".
   client.user.setGame(`on ${client.guilds.size} servers`);
 });
 bot.on("message", function(message) {

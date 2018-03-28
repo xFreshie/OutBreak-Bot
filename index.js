@@ -280,6 +280,19 @@ var wot = [
   if (command === "staffcommands") {
     message.channel.send("**=-=-=-Staff Help=-=-=-=**\n-kick \n -ban \n-purge\n ``These are the only commands for now.``");
   }
+	//Arrays
+client.on("message", (message) => {
+  if(message.content === "ayy") {
+    message.channel.send("Ayy, lmao!");
+  }
+  if(message.content === "wat") {
+    message.channel.send("Say what?");
+  }
+  if(message.content === "lol") {
+    message.channel.send("roflmaotntpmp");
+  }
+});
+
 });
 
 client.login(process.env.BOT_TOKEN);

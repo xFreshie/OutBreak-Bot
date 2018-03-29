@@ -298,7 +298,7 @@ var wot = [
     });
   }
   if(command === "ships") {
-	  message.channel.send("**Color x ALAND** ``COLAND``\n**EnderKawaii x Nicolidas** ``Enderlidas``\n**Iza x Cleaner** ``Cleanza``\nAND FINALLY! **Fresh x no one** ``#lonely4ever``");
+	  message.channel.send("**Color x ALAND** ``COLAND``\n**EnderKawaii x Nicolidas** ``Enderlidas``\n**Iza x Cleaner** ``Cleanza``\n**Enceladus x CheetehZ** ``Cheeceladus``\n**Moncef x roblox** ``OOF``\n``AND FINALLY! **Fresh x no one** ``#lonely4ever``");
   }
 });
 

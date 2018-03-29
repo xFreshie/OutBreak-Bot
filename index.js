@@ -215,13 +215,14 @@ var wot = [
   }
   
   if(command === "userinfo") {
+	    let usar = message.mentions.users.first() ? message.mentions.users.first() : message.author
             var embed = new Discord.RichEmbed()
-            .setAuthor(message.author.username)
+            .setAuthor(usar.username)
             .setDescription("This is the user's info!")
             .setColor("#9B59B6")
-            .addField("Full Username", `${message.author.username}#${message.author.discriminator}`)
-            .addField("ID", message.author.id)
-            .addField("Created At", message.author.createdAt);
+            .addField("Full Username", `${usar.username}#${usar.discriminator}`)
+            .addField("ID", usar.id)
+            .addField("Created At", usar.createdAt);
         message.channel.send(embed);
   }
   

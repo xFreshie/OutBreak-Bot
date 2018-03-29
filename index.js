@@ -108,8 +108,8 @@ var pizza = [
 	'https://i.imgur.com/Kp3DeAr.png'
 ]
 
-var ayy = [
-	'Ay waddup ma brudda'
+var nou = [
+	'https://i.imgur.com/D8SVWl6.gif'
 ]
 
 var wot = [
@@ -292,8 +292,10 @@ var wot = [
 	  message.reply(", You cannot use this yet.");
   }
 	
-  if(message.content === "ayy") {
-	  message.channel.send("Ayy, lmao!");
+  if(command === "nou") {
+    message.channel.send("** NO U **", {
+        file: (nou[Math.floor(Math.random() * nou.length)])
+    });
   }
 	  
 });

@@ -331,7 +331,7 @@ var wot = [
   }
   if(command === "shoot") {
 	  let useer = message.mentions.usere.first() ? message.mentions.users.first() : message.author
-	  message.channel.send(message.author.username, "has shot" usar.username);
+	  message.channel.send(message.author.username, "has shot" useer.username);
   }
 });
 

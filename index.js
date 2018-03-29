@@ -39,7 +39,6 @@ client.on("guildDelete", guild => {
 });
 
 
-client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
   
   // It's good practice to ignore other bots. This also makes your bot ignore itself

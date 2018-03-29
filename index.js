@@ -108,7 +108,7 @@ var pizza = [
 	'https://i.imgur.com/Kp3DeAr.png'
 ]
 
-var responseObject = [
+var ayy = [
 	'Ay waddup ma brudda'
 ]
 
@@ -293,8 +293,8 @@ var wot = [
   }
 	
 	if (message === "Ayy") {
-		message.channel.send(responseObject[Math.floor(Math.random() responseObject.length)]);
-	}
+		message.channel.send(ayy[Math.floor(Math.random() * ayy.length)]);
+  }
 	  
 });
 

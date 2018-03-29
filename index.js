@@ -334,7 +334,6 @@ var wot = [
 	  message.channel.send(message.author.username + " **(　-_･) ︻デ═一 ▸**" + useer.username);
   }
   if(command === "minecraftskin") {
-constructor(client) {
 		super(client, {
 			name: 'skin',
 			group: 'minecraft',

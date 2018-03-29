@@ -316,7 +316,8 @@ var wot = [
 	  });
   }
   if(command === "lostkids") {
-	  message.channel.send("**The lost kids in this town are\n**Trash**\n**Sexified**\n**Cleaner**\n**Iza**\n**Koni**\n**Benji**\n**caer**\nIf you find any of them, please call 911-FOICKOFF.
+	  message.channel.send("**The lost kids in this town are\n**Trash**\n**Sexified**\n**Cleaner**\n**Iza**\n**Koni**\n**Benji**\n**caer**\nIf you find any of them, please call 911-FOICKOFF.");
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

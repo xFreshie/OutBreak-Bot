@@ -198,22 +198,8 @@ var wot = [
     if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     // get the delete count, as an actual number.
-  const user = (msg.mentions.users.first() || bot.users.get(args[0]) || null);
-  const amount = !!user ? parseInt(msg.content.split(" ")[2], 10) : parseInt(msg.content.split(" ")[1], 10);
-  if (!amount) return msg.edit("Must specify an amount to delete!").then(msg.delete(2000));
-  if (!amount && !user) return msg.edit("Must specify a user and amount, or just an amount, of messages to purge!").then(msg.delete(2000));
-  await msg.delete();
-  let messages = await msg.channel.messages.fetch({limit: 100});
-  if(user) {
-    messages = messages.array().filter(m=>m.author.id === user.id);
-    bot.log("log", "Purge Amount", msg.author, "Amount: " + amount);
-    messages.length = amount;
-  } else {
-    messages = messages.array();
-    messages.length = amount + 1;
+	  message.reply(", This command is disabled due to it not working correctly.");
   }
-  messages.map(async m => await m.delete().catch(console.error));
-};
   
   if(command === "8ball") {
     if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);

@@ -318,23 +318,15 @@ var wot = [
   if(command === "lostkids") {
 	  message.channel.send("**The lost kids in this town are**\n**Trash**\n**Sexified**\n**Cleaner**\n**Iza**\n**Koni**\n**Benji**\n**caer**\nIf you find any of them, please call 911-FOICKOFF.");
   }
-  if(command === "setprefix") {
-  let split = message.content.split("\"");
-  let bool = message.content.replace(/"/g, "");
-  if (bool.length === message.content.length - 1) {
-    bool = false;
-  } else {
-    bool = true
+  if(command === "avatar") {
+  let user = message.mentions.users.first() ? message.mentions.users.first() : message.author
+  let ava = user.displayAvatarURL
+  let embed = {
+      color:0x542437,
+      description:"Here is "+user.username+"'s avatar: *[url]("+ava+")*",
+      image:{url:ava}
   }
-  if (!split[1] || !bool) {
-    return message.channel.send("Looks like you didnt format setting the prefix correctly,\nThe proper way is: `" + message.guild.prefix + "setprefix \"newPrefix\"`\n*example: to set the prefix to `nitro, ` use,*\n`" + message.guild.prefix + "setprefix \"nitro, \"`");
-  }
-  if (split[1].length > 20) return message.channel.send("**Invalid Prefix**: Too Long")
-
-  if (split[1].startsWith(" ")) return message.channel.send("**Invalid Prefix**: Illegal Characters")
-  if (/^\s+$/g.test(split[1])) return message.channel.send("**Invalid Prefix**: Illegal Characters")
-  bot.config.setPrefix(message.guild.id, split[1]);
-  message.channel.send("**The prefix for this server has been changed to '" + bot.config.getPrefix(message.guild.id) + "'**")
+  message.channel.send("", {embed});
 }
 });
 

@@ -297,7 +297,12 @@ var wot = [
         file: (nou[Math.floor(Math.random() * nou.length)])
     });
   }
-	  
+	  //
+client.on("message", function(message) {
+	if (message.content === ("Ayy")){
+		client.reply(message, "Ayy lmao!");
+}
+});
 });
 
 client.login(process.env.BOT_TOKEN);

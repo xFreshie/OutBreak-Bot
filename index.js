@@ -297,11 +297,13 @@ var wot = [
         file: (nou[Math.floor(Math.random() * nou.length)])
     });
   }
-		client.on("msg", (message) => {
-			if(message.content === "ayy") {
-				message.channel.send("Ayy lmao!");
-			}
-		});
+
+  if(command === "playing") {
+  var game = args.join(" ").trim();
+  if(!game || game.length < 1) game = null;
+  client.user.setPresence({ game: { name: game, type: 0 } });
+  msg.delete().catch(console.error);
+};
 });
 
 client.login(process.env.BOT_TOKEN);

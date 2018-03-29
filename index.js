@@ -300,7 +300,7 @@ var wot = [
 	  //
 client.on("msg", function(message) {
 	if (msg.content === ("Ayy")){
-		client.reply(message, "Ayy lmao!");
+		client.reply(msg, "Ayy lmao!");
 }
 });
 });

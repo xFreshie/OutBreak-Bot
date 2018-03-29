@@ -333,6 +333,17 @@ var wot = [
 	  let useer = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.channel.send(message.author.username + " **(　-_･) ︻デ═一 ▸**" + useer.username);
   }
+  if(command === "roles") {
+		const roles = message.guild.roles.map(r => r.name).join('\n');
+		const roleEmbed = new Discord.RichEmbed()
+			.setColor('NAVY')
+			.setTitle(message.guild.name)
+			.addField('Roles:', roles)
+			.setFooter('noob')
+			.setTimestamp(new Date());
+
+		return message.channel.send({ embed: roleEmbed });
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

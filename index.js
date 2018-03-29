@@ -297,11 +297,10 @@ var wot = [
         file: (nou[Math.floor(Math.random() * nou.length)])
     });
   }
-	  //
-client.on("msg", function(message) {
-	if (msg.content === ("Ayy")){
-		client.reply(msg, "Ayy lmao!");
-}
+		client.on("msg", (message) => {
+			if(message.content === "ayy") {
+				message.channel.send("Ayy lmao!");
+			}
 });
 
 client.login(process.env.BOT_TOKEN);

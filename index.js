@@ -323,7 +323,7 @@ var wot = [
       msg.edit(`Status changed to ${status}`).then(setTimeout(msg.delete.bind(msg), 1000));
     }).catch(e=> {
       msg.edit(`Error while changing status to: ${status}\n\`\`\`${e}\`\`\``).then(setTimeout(msg.delete.bind(msg), 1000));
-    });
+    }
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -330,7 +330,7 @@ var wot = [
   message.channel.send("", {embed});
   }
   if(command === "shoot") {
-	  let useer = message.mentions.usere.first() ? message.mentions.users.first() : message.author
+	  let useer = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.channel.send(message.author.username, "has shot" useer.username);
   }
 });

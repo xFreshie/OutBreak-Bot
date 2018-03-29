@@ -104,6 +104,10 @@ var dab = [
 	'https://media.giphy.com/media/d4blihcFNkwE3fEI/giphy.gif'
 ]
 
+var beat = [
+	'https://i.ytimg.com/vi/f5cMwOUPPFI/hqdefault.jpg'
+]
+
 var pizza = [
 	'https://i.imgur.com/Kp3DeAr.png'
 ]
@@ -302,6 +306,14 @@ var wot = [
   }
   if(command === "bae") {
 	  message.channel.send("That's MUEEZ!");
+  }
+  if(command === "secretcommands") {
+	  message.channel.send("**=-=-Secret Commands=-=-**\n-Beat\n-Bae\n-ships\n-nou");
+  }
+  if(command === "beat") {
+	  message.channel.send("**Are you talking about beat_pa?** ``OMG``", {
+		  file: (beat[Math.floor(Math.random() * beat.length)])
+	  });
   }
 });
 

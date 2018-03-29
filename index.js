@@ -109,9 +109,7 @@ var pizza = [
 ]
 
 var responseObject = [
-  "ayy": "Ayy, lmao!",
-  "wat": "Say what?",
-  "lol": "roflmaotntpmp"
+	'Ay waddup ma brudda'
 ]
 
 var wot = [
@@ -294,11 +292,9 @@ var wot = [
 	  message.reply(", You cannot use this yet.");
   }
 	
-//Arrays
-client.on("message", (message) => {
-  if(responseObject[message.content]) {
-    message.channel.send(responseObject[message.content]);
-  }
+	if (message === "Ayy") {
+		message.channel.send(responseObject[Math.floor(Math.random() responseObject.length)]);
+	}
 	  
 });
 

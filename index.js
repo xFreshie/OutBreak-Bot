@@ -292,8 +292,8 @@ var wot = [
 	  message.reply(", You cannot use this yet.");
   }
 	
-	if (message === "Ayy") {
-		message.channel.send(ayy[Math.floor(Math.random() * ayy.length)]);
+  if(message.content === "ayy") {
+	  message.channel.send("Ayy, lmao!");
   }
 	  
 });

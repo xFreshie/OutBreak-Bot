@@ -108,6 +108,12 @@ var pizza = [
 	'https://i.imgur.com/Kp3DeAr.png'
 ]
 
+var responseObject = [
+  "ayy": "Ayy, lmao!",
+  "wat": "Say what?",
+  "lol": "roflmaotntpmp"
+]
+
 var wot = [
 	'https://media.giphy.com/media/nipbykblMUnu0/giphy.gif'
 ]
@@ -286,6 +292,12 @@ var wot = [
       return message.reply("Sorry, you don't have permissions to use this");
 	  //Now the message
 	  message.reply(", You cannot use this yet.");
+  }
+	
+//Arrays
+client.on("message", (message) => {
+  if(responseObject[message.content]) {
+    message.channel.send(responseObject[message.content]);
   }
 	  
 });

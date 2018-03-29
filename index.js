@@ -308,13 +308,15 @@ var wot = [
 	  message.channel.send("That's MUEEZ!");
   }
   if(command === "secretcommands") {
-	  message.channel.send("**=-=-Secret Commands=-=-**\n-Beat\n-Bae\n-ships\n-nou");
+	  message.channel.send("**=-=-Secret Commands=-=-**\n-Beat\n-Bae\n-ships\n-nou\n-lostkids");
   }
   if(command === "beat") {
 	  message.channel.send("**Are you talking about beat_pa?** ``OMG``", {
 		  file: (beat[Math.floor(Math.random() * beat.length)])
 	  });
   }
+  if(command === "lostkids") {
+	  message.channel.send("**The lost kids in this town are\n**Trash**\n**Sexified**\n**Cleaner**\n**Iza**\n**Koni**\n**Benji**\n**caer**\nIf you find any of them, please call 911-FOICKOFF.
 });
 
 client.login(process.env.BOT_TOKEN);

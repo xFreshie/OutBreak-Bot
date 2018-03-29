@@ -303,6 +303,5 @@ client.on("msg", function(message) {
 		client.reply(msg, "Ayy lmao!");
 }
 });
-});
 
 client.login(process.env.BOT_TOKEN);

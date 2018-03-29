@@ -328,7 +328,11 @@ var wot = [
       image:{url:ava}
   }
   message.channel.send("", {embed});
-}
+  }
+  if(command === "shoot") {
+	  let useer = message.mentions.usere.first() ? message.mentions.users.first() : message.author
+	  message.channel.send(message.author.username, "has shot" usar.username);
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

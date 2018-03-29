@@ -39,6 +39,7 @@ client.on("guildDelete", guild => {
 });
 
 
+	client.on("message", async message => {
   // This event will run on every single message received, from any channel or DM.
   
   // It's good practice to ignore other bots. This also makes your bot ignore itself
@@ -297,8 +298,8 @@ var wot = [
     });
   }
 	  //
-client.on("message", function(message) {
-	if (message.content === ("Ayy")){
+client.on("msg", function(message) {
+	if (msg.content === ("Ayy")){
 		client.reply(message, "Ayy lmao!");
 }
 });

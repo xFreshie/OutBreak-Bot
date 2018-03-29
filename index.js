@@ -301,6 +301,7 @@ var wot = [
 			if(message.content === "ayy") {
 				message.channel.send("Ayy lmao!");
 			}
+		});
 });
 
 client.login(process.env.BOT_TOKEN);

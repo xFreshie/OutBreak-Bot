@@ -65,6 +65,30 @@ client.on("guildDelete", guild => {
     "Maybe",
     "fucc you"
 ];
+		
+  var gay = [
+	  "5% gay",
+	  "10% gay",
+	  "15% gay",
+	  "20% gay",
+	  "25% gay",
+	  "30% gay",
+	  "35% gay",
+	  "40% gay",
+	  "45% gay",
+	  "50% gay",
+	  "55% gay",
+	  "60% gay",
+	  "65% gay",
+	  "70% gay",
+	  "75% gay",
+	  "80% gay",
+	  "85% gay",
+	  "90% gay",
+	  "95% gay",
+	  "100% gay",
+	  "OVER 9000% GAY"
+]
   
   var fortunes2 = [
     "Do you kno da wae brudda",
@@ -252,7 +276,7 @@ var wot = [
   }
   
   if(command === "help") {
-    	message.channel.send('**=== Help ===**\n\n**Note:** Please use ``-staffcommands`` for staff commands. \n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada** = you know\n **-pizza** = You know this too lol\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\n```Please use - as the prefix```\n**Special thanks to Ethan for helping me out!**');
+    	message.channel.send('**=== Help ===**\n\n**Note:** Please use ``-staffcommands`` for staff commands. \n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada** = you know\n **-pizza** = You know this too lol\n**-shoot** = **shoots people**\n**-nou** = **no you**\n**-avatar** = **displays the profile picture of the tagged person**\n**-gay** = **gay simulator**\n**-roles** = **Displays the roles in the server**\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\n```Please use - as the prefix```\n**Special thanks to Ethan for helping me out!**');
   }
   
   if(command === "meme") {
@@ -345,6 +369,11 @@ var wot = [
 
 		return message.channel.send({ embed: roleEmbed });
   }
+  if(command === "gay") {
+	  let useeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.channel.send(useeeer.username + "is" + gay[Math.floor(Math.random() * gay.length)]);
+  }
+  
 });
 
 client.login(process.env.BOT_TOKEN);

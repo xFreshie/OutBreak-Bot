@@ -384,7 +384,8 @@ var wot = [
   if(command === "dance") {
 	  message.channel.send("**DANCE DANCE DANCE TODAY**", {
 		  file: (dance[Math.floor(Math.random() * dance.length)])
-	  }
+    });
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

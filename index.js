@@ -128,6 +128,14 @@ var dab = [
 	'https://media.giphy.com/media/d4blihcFNkwE3fEI/giphy.gif'
 ]
 
+var dance = [
+	'https://media.giphy.com/media/3o7qE2VAxuXWeyvJIY/giphy.gif',
+	'https://media.giphy.com/media/57Y0HrGWcu4WYvc6vE/giphy.gif',
+	'https://media.giphy.com/media/jzaZ23z45UxK8/giphy.gif',
+	'https://media.giphy.com/media/LLHkw7UnvY3Kw/giphy.gif',
+	'https://media.giphy.com/media/4j9XOYo6IVDK8/giphy.gif'
+]
+
 var beat = [
 	'https://i.ytimg.com/vi/f5cMwOUPPFI/hqdefault.jpg'
 ]
@@ -276,7 +284,7 @@ var wot = [
   }
   
   if(command === "help") {
-    	message.channel.send('**=== Help ===**\n\n**Note:** Please use ``-staffcommands`` for staff commands. \n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada** = you know\n **-pizza** = You know this too lol\n**-shoot** = **shoots people**\n**-nou** = **no you**\n**-avatar** = **displays the profile picture of the tagged person**\n**-gay** = **gay simulator**\n**-roles** = **Displays the roles in the server**\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\n```Please use - as the prefix```\n**Special thanks to Ethan for helping me out!**');
+    	message.channel.send('**=== Help ===**\n\n**Note:** Please use ``-staffcommands`` for staff commands. \n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-userinfo--** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada** = you know\n**-pizza** = You know this too lol\n**-shoot** = shoots people\n**-nou** = no you\n**-avatar** = displays the profile picture of the tagged person\n**-gay** = gay simulator\n**-roles** = Displays the roles in the server\n**-dance** = People dance, not the bot. silly.\n**Type** @Outbreak (Question or anything), He answers it or talks to you.\n``Please use - as the prefix``\n**Special thanks to ethan for all of this**\n**Chatbot is down for some time because its not working. Will be fixed soon.**');
   }
   
   if(command === "meme") {
@@ -373,6 +381,10 @@ var wot = [
 	  let useeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.channel.send("**" + useeeer.username + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**");
   }
+  if(command === "dance") {
+	  message.channel.send("**DANCE DANCE DANCE TODAY**", {
+		  file: (dance[Math.floor(Math.random() * dance.length)])
+	  });
   
 });
 

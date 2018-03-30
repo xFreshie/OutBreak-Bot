@@ -270,7 +270,7 @@ var wot = [
   
   if(command === "roast") {
 	  let useeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
-	  message.channel.send(user.username + roast[Math.floor(Math.random() * roast.length)]);
+	  message.channel.send(useeer.username + roast[Math.floor(Math.random() * roast.length)]);
   }
   
   if(command === "whosyourdada") {

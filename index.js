@@ -371,7 +371,7 @@ var wot = [
   }
   if(command === "gay") {
 	  let useeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
-	  message.channel.send("**" + message.mentions.users.first + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**");
+	  message.channel.send("**" + useeeer.username + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**");
   }
   
 });

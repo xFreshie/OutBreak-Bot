@@ -378,7 +378,7 @@ var wot = [
   }
   if(command === "gay") {
 	  let useeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
-	  message.channel.send("**" + useeeer.username + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**");
+	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**");
   }
   if(command === "dance") {
 	  message.channel.send("**DANCE DANCE DANCE TODAY**", {
@@ -388,7 +388,7 @@ var wot = [
   if(command === "ty") {
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
-	  message.channel.send("Thanks for reporting " + `<@$noob.id>`);
+	  message.channel.send("Thanks for reporting " + `<@${message.mentions.users.first().id}>`);
   }
 });
 

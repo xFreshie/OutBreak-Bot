@@ -391,7 +391,7 @@ var wot = [
 	  message.delete().catch(O_o=>{});
 	  message.channel.send("Thanks for reporting" + noob.id);
   }
-  if(command === "ty") {
+  if(command === "setavatar") {
     request.get(message.content.substr(11)).pipe(fs.createWriteStream('./setavatar.png'));
     client.user.setAvatar(fs.readFileSync('./setavatar.png')).then(user => { message.channel.send('✔ Operation successful'); console.log('New Avatar set!'); })
         .catch((error) => { message.channel.send('× Operation failed'); console.log('Error on setavatar command:', error); });

@@ -363,8 +363,7 @@ var wot = [
   message.channel.send("", {embed});
   }
   if(command === "shoot") {
-	  let useer = message.mentions.users.first() ? message.mentions.users.first() : message.author
-	  message.channel.send(`<@${message.author.id}>` + " **(　-_･) ︻デ═一 ▸**" + `<@$useer.id>`);
+      message.channel.send(`<@${message.author.id}>  **(　-_･) ︻デ═一 ▸** <@${message.mentions.users.first().id}>`);
   }
   if(command === "roles") {
 		const roles = message.guild.roles.map(r => r.name).join('\n');

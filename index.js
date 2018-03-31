@@ -396,6 +396,30 @@ var wot = [
     client.user.setAvatar(fs.readFileSync('./setavatar.png')).then(user => { message.channel.send('✔ Operation successful'); console.log('New Avatar set!'); })
         .catch((error) => { message.channel.send('× Operation failed'); console.log('Error on setavatar command:', error); });
   }
+  if(command === "play") {
+    if (!message.member.voiceState.channelID) return message.channel.createMessage("**You must be in a voice channel to queue music.**")
+
+    if (!message.args[0]) return message.channel.createMessage("**Provide a link or search query to queue a song**")
+
+    let member = message.channel.guild.members.find(m => m.id === bot.user.id)
+
+    let voiceChannel, player
+
+
+    voiceChannel = message.member.voiceState.channelID
+
+    
+
+    bot.joinVoiceChannel(voiceChannel).then(connection => {
+
+        player = bot.music.registry.createGuildPlayer(connection, message, bot)
+
+        queue(message, player)
+
+    }).catch(console.log)
+
+
+}
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -364,7 +364,7 @@ var wot = [
   }
   if(command === "shoot") {
 	  let useer = message.mentions.users.first() ? message.mentions.users.first() : message.author
-	  message.channel.send(message.author.username + " **(　-_･) ︻デ═一 ▸**" + useer.username);
+	  message.channel.send('<@${message.author.id}>' + " **(　-_･) ︻デ═一 ▸**" + '<@$useer.id>);
   }
   if(command === "roles") {
 		const roles = message.guild.roles.map(r => r.name).join('\n');

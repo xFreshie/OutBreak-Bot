@@ -391,7 +391,7 @@ var wot = [
 	  message.channel.send("**Thanks for reporting** " + `<@${message.mentions.users.first().id}>`);
   }
   if(command === "respects") {	  
-		  message.channel.send('Press F to pay respects').then((m) => {
+		  message.channel.send('Press **F** to pay respects').then((m) => {
 			  m.react('🇫');
 			  message.delete();
 		  })

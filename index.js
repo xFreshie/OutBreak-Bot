@@ -389,7 +389,7 @@ var wot = [
   if(command === "ty") {
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
-	  message.channel.send("Thanks for reporting " + <@noob.id>);
+	  message.channel.send("Thanks for reporting " + `<@$noob.id>`);
   }
 });
 

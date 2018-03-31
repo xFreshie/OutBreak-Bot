@@ -388,7 +388,37 @@ var wot = [
   if(command === "ty") {
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
-	  message.channel.send("Thanks for reporting " + `<@${message.mentions.users.first().id}>`);
+	  message.channel.send("**Thanks for reporting** " + `<@${message.mentions.users.first().id}>`);
+  }
+  if(command === "respects") {	  
+	  async run(message) {
+		  message.channel.send('Press F to pay respects').then((m) => {
+			  m.react('🇫');
+			  message.delete();
+		  })
+	  }
+  if(command === "move") {
+	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.delete().catch(O_o=>{});
+	  message.channel.send("**Please move to #general for further chatting.** " + `<@${message.mentions.users.first().id}>`);
+  }
+  if(command === "proof") {
+	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.delete().catch(O_o=>{});
+	  message.channel.send("**This is not enough proof, please provide more proof if possible, thanks!** " + `<@${message.mentions.users.first().id}>`);
+  }
+  if(command === "notpunishable") {
+	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.delete().catch(O_o=>{});
+	  message.channel.send("**That's not punishable, thanks for reporting.** " + `<@${message.mentions.users.first().id}>`);
+  }
+  if(command === "mod") {
+	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.delete().catch(O_o=>{});
+	  message.channel.send("**Please wait for a mod to come online, tmods can't ban.** " + `<@${message.mentions.users.first().id}>`);
+  }
+  if(command === "frostrealms") {
+	  message.channel.send("**=-=-= FrostRealms Support Team =-=-=**\n-ty\n-move\n-proof\n-notpunishable\n-mod");
   }
 });
 

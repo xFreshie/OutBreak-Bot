@@ -386,6 +386,11 @@ var wot = [
 		  file: (dance[Math.floor(Math.random() * dance.length)])
     });
   }
+  if(command === "ty") {
+	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.delete().catch(O_o=>{});
+	  message.channel.send("Thanks for reporting" + noob.tag);
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -433,16 +433,14 @@ var wot = [
       return message.reply("Sorry, you don't have permissions to use this!");
 	  message.channel.send("**=-=-= FrostRealms Support Team =-=-=**\n-ty\n-move\n-proof\n-notpunishable\n-mod");
   }
-  if(command === "getsomehelp") {
-    let member = message.member;
-    if (!member.voiceChannel) return send("**You must be in a voice channel for this command.**")
-    if (message.guild.member.voiceChannel) return send("**Im already playing something.**")
-
-    member.voiceChannel.join().then(voiceConnection => {
-        voiceConnection.playFile(".Nitro/images/stopit.mp3")
-        setTimeout(() => voiceConnection.disconnect(), 4000)
-    }).catch(console.log)
-}
+  if(command === "block") {
+    if (!message.args[0]) return send("Provide ID")
+    let id = message.args[0]
+    let blocked = bot.system.getBlocked()
+    if (blocked[id]) delete blocked[id], send("Unblocking: "+id)
+    else blocked[id] = true, send("Blocking: "+id)
+    bot.system.setBlocked(blocked)
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

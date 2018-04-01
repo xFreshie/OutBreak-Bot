@@ -430,12 +430,6 @@ var wot = [
 	  message.channel.send("**=-=-= FrostRealms Support Team =-=-=**\n-ty\n-move\n-proof\n-notpunishable\n-mod");
   }
   if(command === "getsomehelp") {
-    try {
-        await message.guild.fetchMember(message.author);
-        await message.guild.fetchMember(bot.user);
-    } catch(e) {
-        return send("**Something went wrong.**");
-    }
     let member = message.member;
     if (!member.voiceChannel) return send("**You must be in a voice channel for this command.**")
     if (message.guild.member(bot.user).voiceChannel) return send("**Im already playing something.**")

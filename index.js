@@ -397,26 +397,36 @@ var wot = [
 		  })
 	  }
   if(command === "move") {
+   if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
 	  message.channel.send("**Please move to #general for further chatting.** " + `<@${message.mentions.users.first().id}>`);
   }
   if(command === "proof") {
+   if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
 	  message.channel.send("**This is not enough proof, please provide more proof if possible, thanks!** " + `<@${message.mentions.users.first().id}>`);
   }
   if(command === "notpunishable") {
+   if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
 	  message.channel.send("**That's not punishable, thanks for reporting.** " + `<@${message.mentions.users.first().id}>`);
   }
   if(command === "mod") {
+   if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
 	  let noob = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.delete().catch(O_o=>{});
 	  message.channel.send("**Please wait for a mod to come online, tmods can't ban.** " + `<@${message.mentions.users.first().id}>`);
   }
   if(command === "frostrealms") {
+   if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
 	  message.channel.send("**=-=-= FrostRealms Support Team =-=-=**\n-ty\n-move\n-proof\n-notpunishable\n-mod");
   }
 });

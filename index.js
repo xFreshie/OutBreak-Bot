@@ -439,6 +439,15 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 if(command === "hug") {
       message.channel.send(`<@${message.author.id}>  **⊂（♡⌂♡）⊃** <@${message.mentions.users.first().id}>`);
 }
+if (command === "spinner") {
+    const ms = require('ms');
+    var time = Math.floor(Math.random() * 99 + 1);
+  
+  msg.channel.send("You spun your fidget spinner...");
+  setTimeout(() => {
+    msg.channel.send(`<@${msg.author.id}> your spinner spun for **${time}** seconds!`);
+  }, ms(`${time}s`));
+};
 });
 
 client.login(process.env.BOT_TOKEN);

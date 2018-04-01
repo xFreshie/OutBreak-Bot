@@ -168,9 +168,6 @@ var wot = [
     //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
     // --------------------------------------------
   // Let's go with a few common example commands! Feel free to delete or change those.
-		if(message.channel.type === "dm") {
-			message.author.send("**Please use that command in a server.**");
-		}
   //
   if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
@@ -274,6 +271,8 @@ var wot = [
   }
   
   if(command === "serverinfo") {
+	  		if(message.channel.type === "dm") {
+			message.author.send("**Please use that command in a server.**");
 			let sicon = message.guild.displayAvatarURL;
 			let serverembed = new Discord.RichEmbed()
 			.setDescription("**Server information**")

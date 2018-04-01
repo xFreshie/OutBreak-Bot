@@ -439,6 +439,11 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 if(command === "hug") {
       message.channel.send(`<@${message.author.id}>  **⊂（♡⌂♡）⊃** <@${message.mentions.users.first().id}>`);
 }
+// Checks each message for a command
+client.on("message", function(message){
+	if (message.content === "Ayy") {
+		message.reply("Ayy lmao!");
+	}
 });
 
 client.login(process.env.BOT_TOKEN);

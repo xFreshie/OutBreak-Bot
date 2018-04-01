@@ -436,6 +436,7 @@ var wot = [
   }
 if(command === "hug") {
       message.channel.send(`<@${message.author.id}>  **⊂（♡⌂♡）⊃** <@${message.mentions.users.first().id}>`);
+}
 });
 
 client.login(process.env.BOT_TOKEN);

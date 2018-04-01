@@ -188,12 +188,6 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
-// Checks each message for a command
-client.on("message", function(message){
-	if (message.content === "Ayy") {
-		message.reply("Ayy lmao!");
-	}
-	//
   
   if(command === "kick") {
     // This command must be limited to mods and admins. In this example we just hardcode the role names.

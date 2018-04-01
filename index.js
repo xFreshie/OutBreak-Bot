@@ -432,7 +432,7 @@ var wot = [
   if(command === "getsomehelp") {
     let member = message.member;
     if (!member.voiceChannel) return send("**You must be in a voice channel for this command.**")
-    if (message.guild.member(bot.user).voiceChannel) return send("**Im already playing something.**")
+    if (message.guild.member.voiceChannel) return send("**Im already playing something.**")
 
     member.voiceChannel.join().then(voiceConnection => {
         voiceConnection.playFile(".Nitro/images/stopit.mp3")

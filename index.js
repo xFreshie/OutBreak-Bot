@@ -273,6 +273,7 @@ var wot = [
   if(command === "serverinfo") {
 	  		if(message.channel.type === "dm") {
 			message.author.send("**Please use that command in a server.**");
+			}
 			let sicon = message.guild.displayAvatarURL;
 			let serverembed = new Discord.RichEmbed()
 			.setDescription("**Server information**")

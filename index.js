@@ -444,7 +444,7 @@ var wot = [
 			let gay2 = new Discord.RichEmbed()
 			.setDescription("**Gay simulator**")
 			.setColor("#ff009d")
-			.addField("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**")
+			.addField(' "**" + `<@${message.mentions.users.first().id}>` + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**" ')
 			message.channel.send(gay2);
  }
 });

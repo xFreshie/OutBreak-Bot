@@ -439,6 +439,14 @@ var wot = [
         setTimeout(() => voiceConnection.disconnect(), 4000)
     }).catch(console.log)
 }
+ if(command === "test") {
+	 		let gay = message.mentions.users.first() ? message.mentions.users.first() : message.author
+			let gay2 = new Discord.RichEmbed()
+			.setDescription("**Gay simulator**")
+			.setColor("#ff009d")
+			.addField("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  gay[Math.floor(Math.random() * gay.length)] + "**")
+			message.channel.send(gay2);
+ }
 });
 
 client.login(process.env.BOT_TOKEN);

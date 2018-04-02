@@ -445,7 +445,7 @@ if (command === "getsomehelp) {
     if (message.guild.member(bot.user).voiceChannel) return send("**Im already playing something.**")
 
     member.voiceChannel.join().then(voiceConnection => {
-        voiceConnection.playFile("./images/stopit.mp3")
+        voiceConnection.playFile(".Nitro/images/stopit.mp3")
         setTimeout(() => voiceConnection.disconnect(), 4000)
     }).catch(console.log)
 }

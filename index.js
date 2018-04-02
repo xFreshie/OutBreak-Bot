@@ -149,6 +149,19 @@ var nou = [
 	'https://i.imgur.com/D8SVWl6.gif'
 ]
 
+var suppl = [
+	'https://i.imgur.com/44CKjk2.png'
+]
+
+var supple = [
+	'suppL',
+	'SUP EL',
+	'SOOUPL',
+	'SEPLE',
+	'SUP L',
+	'supple'
+]
+
 var wot = [
 	'https://media.giphy.com/media/nipbykblMUnu0/giphy.gif'
 ]
@@ -455,6 +468,11 @@ if (command === "getsomehelp") {
 if (message.content === "iza") {
 	message.channel.send("Is iza a hoe?");
 }
+  if(command === "supple") {
+    message.channel.send(supple[Math.floor(Math.random() * supple.length)], {
+        file: (suppl[Math.floor(Math.random() * suppl.length)])
+    });
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

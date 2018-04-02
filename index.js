@@ -474,7 +474,7 @@ if (message.content === "iza") {
     });
   }
 if(command === "vaughn") {
-	message.channel.send("noob*");
+	message.channel.send("no u*");
 }
 });
 

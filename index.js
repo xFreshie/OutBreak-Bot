@@ -452,6 +452,9 @@ if (command === "getsomehelp") {
         setTimeout(() => voiceConnection.disconnect(), 4000)
     }).catch(console.log)
 }
+if (message.content === "iza") {
+	message.channel.send("Is iza a hoe?");
+}
 });
 
 client.login(process.env.BOT_TOKEN);

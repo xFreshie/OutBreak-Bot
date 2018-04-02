@@ -373,6 +373,9 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
       message.channel.send(`<@${message.author.id}>  **(　-_･) ︻デ═一 ▸** <@${message.mentions.users.first().id}>`);
   }
   if(command === "roles") {
+	  		if(message.channel.type === "dm") {
+			message.author.send("**Please use that command in a server.**");
+			}
 		const roles = message.guild.roles.map(r => r.name).join('\n');
 		const roleEmbed = new Discord.RichEmbed()
 			.setColor('NAVY')

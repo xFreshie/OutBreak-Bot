@@ -473,6 +473,9 @@ if (message.content === "iza") {
         file: (suppl[Math.floor(Math.random() * suppl.length)])
     });
   }
+if(command === "vaughn") {
+	message.channel.send("noob*");
+}
 });
 
 client.login(process.env.BOT_TOKEN);

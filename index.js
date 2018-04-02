@@ -439,7 +439,7 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 if(command === "hug") {
       message.channel.send(`<@${message.author.id}>  **⊂（♡⌂♡）⊃** <@${message.mentions.users.first().id}>`);
 }
-if (command === "getsomehelp) {
+if (command === "getsomehelp") {
     let member = message.member;
     if (!member.voiceChannel) return send("**You must be in a voice channel for this command.**")
     if (message.guild.member(bot.user).voiceChannel) return send("**Im already playing something.**")

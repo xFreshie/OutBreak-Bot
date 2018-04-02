@@ -309,7 +309,7 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
   
   if(command === "roast") {
 	  let useeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
-	  message.channel.send(`<@${message.mentions.users.first().id}>` +" ," + roast[Math.floor(Math.random() * roast.length)]);
+	  message.channel.send(`<@${message.mentions.users.first().id}>` +", " + roast[Math.floor(Math.random() * roast.length)]);
   }
   
   if(command === "whosyourdada") {

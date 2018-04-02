@@ -439,6 +439,16 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 if(command === "hug") {
       message.channel.send(`<@${message.author.id}>  **⊂（♡⌂♡）⊃** <@${message.mentions.users.first().id}>`);
 }
+if (command === "getsomehelp) {
+    let member = message.member;
+    if (!member.voiceChannel) return send("**You must be in a voice channel for this command.**")
+    if (message.guild.member(bot.user).voiceChannel) return send("**Im already playing something.**")
+
+    member.voiceChannel.join().then(voiceConnection => {
+        voiceConnection.playFile("./images/stopit.mp3")
+        setTimeout(() => voiceConnection.disconnect(), 4000)
+    }).catch(console.log)
+}
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -505,7 +505,7 @@ if(command === "straight") {
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
 if(command === "rps") {
-       if (msg.guild && !msg.channel.permissionsFor(msg.guild.me).has(["SEND_MESSAGES", "VIEW_CHANNEL"])) return;
+       if (message.guild && !message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES", "VIEW_CHANNEL"])) return;
         let botChoice = Math.random();
         if (botChoice < 0.34) {
             botChoice = "rock";
@@ -517,27 +517,27 @@ if(command === "rps") {
 
         function compare(choice1, choice2) {
             if (choice1 === choice2) {
-                return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. It's a tie!`);
+                return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. It's a tie!`);
             }
             if (choice1.match(/Rock/i)) {
                 if (choice2 === "scissors") {
-                    return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Rock wins!`);
+                    return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Rock wins!`);
                 } else {
-                    return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Paper wins!`);
+                    return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Paper wins!`);
                 }
             }
             if (choice1.match(/Paper/i)) {
                 if (choice2 === "rock") {
-                    return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Paper wins!`);
+                    return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Paper wins!`);
                 } else {
-                    return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Scissors win!`);
+                    return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Scissors win!`);
                 }
             }
             if (choice1.match(/Scissors/i)) {
                 if (choice2 === "rock") {
-                    return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Rock wins!`);
+                    return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Rock wins!`);
                 } else {
-                    return msg.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Scissors win!`);
+                    return message.channel.send(`You chose **${choice1}**,\n\nI chose **${choice2}**. Scissors win!`);
                 }
             }
         }

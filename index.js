@@ -543,6 +543,7 @@ exports.run = (bot, msg, [args, ...game]) => {
   if (!args || args.size == 0) type = 0
   bot.user.setActivity(game.join(" "), {type: type});
 }
+}
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -541,7 +541,8 @@ if(command === "nuts") {
 						embed.addField("Rip the nuts of " + member.user.username, "¯\_(ツ)_/¯")
 						embed.setTimestamp()
 						message.channel.send({embed});
-				}
+				})
+}
 });
 
 client.login(process.env.BOT_TOKEN);

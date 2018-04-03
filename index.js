@@ -8,8 +8,6 @@ const YTDL = require('ytdl-core');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
-const { get } = require("snekfetch");
-const { parse } = require("fast-html-parser");
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
@@ -506,13 +504,26 @@ if(command === "straight") {
 	  let useeeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
-if(command === "randomfact") {
-        if (message.guild && !message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES", "VIEW_CHANNEL"])) return;
-        const { text } = await get("http://randomfactgenerator.net/").catch(() => message.say("There was an error"));
-        const root = parse(text);
-        const article = root.querySelector("#z");
-        return message.reply(`Random fact: ${article.childNodes[0].rawText}`);
+if(command === "fortnite") {
+
+var request = require('request');
+
+var playerName = "robi62"; // player in game name
+
+var options = {
+  method: "GET",
+  url: `https://fortnite.y3n.co/v2/player/${playerName}`,
+  headers: {
+    'User-Agent': 'nodejs request',
+    'X-Key': "EamShfcRgqSYUHbbFuj2"
+  }
 }
+
+request(options, (error, response, body) => {
+  if (!error && response.statusCode == 200) {
+    var stats = JSON.parse(body);
+    console.log(`robi62 k/d: ${stats.br.stats.pc.all.kpd}`);
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

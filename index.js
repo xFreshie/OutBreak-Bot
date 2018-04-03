@@ -90,6 +90,30 @@ client.on("guildDelete", guild => {
 	  "100% gay",
 	  "OVER 9000% GAY"
 ]
+
+  var straight = [
+	  "5% straight",
+	  "10% straight",
+	  "15% straight",
+	  "20% gaystraight",
+	  "25% straight",
+	  "30% straight",
+	  "35% straight",
+	  "40% straight",
+	  "45% straight",
+	  "50% straight",
+	  "55% straight",
+	  "60% straight",
+	  "65% straight",
+	  "70% straight",
+	  "75% straight",
+	  "80% straight",
+	  "85% straight",
+	  "90% straight",
+	  "95% straight",
+	  "100% straight",
+	  "IS NOT EVEN STRAIGHT"
+]
   
   var fortunes2 = [
     "Do you kno da wae brudda",
@@ -476,21 +500,10 @@ if (message.content === "iza") {
 if(command === "vaughn") {
 	message.channel.send("no u*");
 }
-if(command === "dmfresh") {
-	client.addCommand("dmfresh ", (payload) => {
-	var message = payload.message
-        var suffix = message.content.split(" ").slice(1).join(" ");
-        if(suffix == "" || suffix == null) return message.channel.sendMessage("Do " +config.prefix+ "dmfresh <Message?> to Message Fresh Privately!");
-        let embed = new Discord.RichEmbed();
-        embed.setColor(0x9900FF)
-        embed.setThumbnail(message.author.displayAvatarURL)
-        embed.addField("Message: ", suffix, true)
-        embed.addField("Discord Channel: ", message.guild.name, true)
-        embed.addField("By: ", message.author.username, true)
-
-        client.client.users.get(config.owner_id).send({embed})
-	})
-}
+if(command === "straight") {
+	  let useeeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
+	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
+  }
 });
 
 client.login(process.env.BOT_TOKEN);

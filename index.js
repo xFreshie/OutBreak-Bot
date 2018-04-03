@@ -186,6 +186,18 @@ var supple = [
 	'supple'
 ]
 
+var pathi = [
+	'pathii',
+	'pathicc',
+	'patheccc',
+	'path',
+	'pathi'
+]
+
+var pathii = [
+	'https://imgur.com/Q354oWZ'
+]
+
 var wot = [
 	'https://media.giphy.com/media/nipbykblMUnu0/giphy.gif'
 ]
@@ -505,7 +517,13 @@ if(command === "straight") {
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
 if(command === "fortnitestats") {
+	let usaaar = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	message.channel.send("**" + `<@${message.mentions.user.first().id}>` + "'s **fortnite stats are**\n**KD** : 0.10 \n**Wins** : 2\n **Kills** : 1 \n**Matches played** : 10");
+}
+if(command === "pathi") {
+	message.channel.send(pathi[Math.floor(Math.random() * pathi.length)], {
+		file: (pathii[Math.floor(Math.random() * pathii.length)])
+	});
 }
 });
 

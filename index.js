@@ -112,7 +112,7 @@ client.on("guildDelete", guild => {
 	  "90% straight",
 	  "95% straight",
 	  "100% straight",
-	  "IS NOT EVEN STRAIGHT"
+	  "NOT EVEN STRAIGHT"
 ]
   
   var fortunes2 = [

@@ -195,7 +195,7 @@ var pathi = [
 ]
 
 var pathii = [
-	'https://imgur.com/Q354oWZ'
+	'https://i.imgur.com/Q354oWZ.png'
 ]
 
 var wot = [

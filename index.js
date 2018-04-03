@@ -540,8 +540,7 @@ if(command === "coin") {
 if(command === "setgame") {
   let type = args;
   if (!args || args.size == 0) type = 0
- client.user.setActivity(game.join(" "), {type: type});
-}
+  client.user.setActivity(game.join(" "), {type: type});
 }
 });
 

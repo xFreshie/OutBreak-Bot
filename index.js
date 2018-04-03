@@ -505,6 +505,7 @@ if(command === "straight") {
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
 if(command === "rps") {
+	async run(msg, { move }) {
        if (message.guild && !message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES", "VIEW_CHANNEL"])) return;
         let botChoice = Math.random();
         if (botChoice < 0.34) {

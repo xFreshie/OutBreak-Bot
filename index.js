@@ -538,6 +538,18 @@ if(command === "coin") {
   const coin = getRandomInt(0, 1)
   message.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
 }
+if(command === "quote") {
+ await message.channel.messages.fetch({around: args[0], limit: 1})
+  .then(messaged => {
+    const messages = messaged.first();
+    const embed = new Discord.MessageEmbed()
+      .setColor(4870738)
+      .setThumbnail(`${messages.author.avatarURL()}`)
+      .setAuthor(`By ${messages.author.tag} (${messages.author.id})`, `${messages.author.avatarURL()}`)
+      .addField("**Message content:**", `${messages.content}`, true);
+    message.channel.send({embed})
+  });
+}
 });
 
 client.login(process.env.BOT_TOKEN);

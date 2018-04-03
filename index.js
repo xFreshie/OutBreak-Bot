@@ -536,7 +536,7 @@ if(command === "nuts") {
 if(command === "coin") {
   const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
   const coin = getRandomInt(0, 1)
-  msg.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
+  message.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
 }
 });
 

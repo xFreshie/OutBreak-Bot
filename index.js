@@ -477,7 +477,7 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 	  message.channel.send("**=-=-= FrostRealms Support Team =-=-=**\n-ty\n-move\n-proof\n-notpunishable\n-mod");
   }
 if(command === "hug") {
-      message.channel.send(`<@${message.author.id}>  **⊂（♡⌂♡）⊃** <@${message.mentions.users.first().id}>`);
+      message.channel.send(`<@${message.author.id}>  **⊂（:heart: ⌂ :heart:）⊃** <@${message.mentions.users.first().id}>`);
 }
 if (command === "getsomehelp") {
     let member = message.member;

@@ -359,7 +359,7 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 	  message.channel.send("**Color x ALAND** ``COLAND``\n**EnderKawaii x Nicolidas** ``Enderlidas``\n**Iza x Cleaner** ``Cleanza``\n**Enceladus x CheetehZ** ``Cheeceladus``\n**Moncef x roblox** ``OOF``\n``AND FINALLY!`` **Fresh x Mueez** ``Freshtard``");
   }
   if(command === "bae") {
-	  message.channel.send("That's message.author.username");
+	  message.channel.send("That's" + message.author.username);
   }
   if(command === "secretcommands") {
 	  message.channel.send("**=-=-Secret Commands=-=-**\n-Beat\n-Bae\n-ships\n-nou\n-lostkids");

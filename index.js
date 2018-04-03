@@ -524,6 +524,7 @@ request(options, (error, response, body) => {
     var stats = JSON.parse(body);
     console.log(`robi62 k/d: ${stats.br.stats.pc.all.kpd}`);
   }
+})
 });
 
 client.login(process.env.BOT_TOKEN);

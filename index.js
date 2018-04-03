@@ -504,27 +504,8 @@ if(command === "straight") {
 	  let useeeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
-if(command === "fortnite") {
-
-var request = require('request');
-
-var playerName = "robi62"; // player in game name
-
-var options = {
-  method: "GET",
-  url: `https://fortnite.y3n.co/v2/player/${playerName}`,
-  headers: {
-    'User-Agent': 'nodejs request',
-    'X-Key': "EamShfcRgqSYUHbbFuj2"
-  }
-}
-
-request(options, (error, response, body) => {
-  if (!error && response.statusCode == 200) {
-    var stats = JSON.parse(body);
-    console.log(`robi62 k/d: ${stats.br.stats.pc.all.kpd}`);
-  }
-})
+if(command === "fortnitestats") {
+	message.channel.send("**" + `<@${message.mentions.user.first().id}>` + "'s **fortnite stats are**\n**KD** : 0.10 \n**Wins** : 2\n **Kills** : 1 \n**Matches played** : 10"
 });
 
 client.login(process.env.BOT_TOKEN);

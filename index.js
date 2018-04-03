@@ -532,6 +532,7 @@ if(command === "nuts") {
 	else {
 		message.channel.send(`<@${message.author.id}> **KICKS THE BALLZ OF** <@${message.mentions.users.first().id}>`)
 	}
+}
 });
 
 client.login(process.env.BOT_TOKEN);

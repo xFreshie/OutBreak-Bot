@@ -538,7 +538,6 @@ if(command === "coin") {
   const coin = getRandomInt(0, 1)
   msg.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
 }
-	}
 });
 
 client.login(process.env.BOT_TOKEN);

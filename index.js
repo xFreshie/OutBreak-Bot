@@ -477,7 +477,7 @@ if(command === "vaughn") {
 	message.channel.send("no u*");
 }
 if(command === "dmfresh") {
-	bot.addCommand("dmfresh ", (payload) => {
+	client.addCommand("dmfresh ", (payload) => {
 	var message = payload.message
         var suffix = message.content.split(" ").slice(1).join(" ");
         if(suffix == "" || suffix == null) return message.channel.sendMessage("Do " +config.prefix+ "dmfresh <Message?> to Message Fresh Privately!");
@@ -488,7 +488,7 @@ if(command === "dmfresh") {
         embed.addField("Discord Channel: ", message.guild.name, true)
         embed.addField("By: ", message.author.username, true)
 
-        bot.client.users.get(config.owner_id).send({embed})
+        client.client.users.get(config.owner_id).send({embed})
 	})
 }
 });

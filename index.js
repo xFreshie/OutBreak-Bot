@@ -530,18 +530,7 @@ if(command === "nuts") {
 	let member = message.mentions.members.first()
 	if(!member) message.reply("you wanna kick em in the nuts?")
 	else {
-		const nutembed = new Discord.RichEmbed()
-		var rdmgif =["https://media1.tenor.com/images/348eae99cbaf68283903d74ee85e67ce/tenor.gif", "https://media1.tenor.com/images/e98b912ad0f5e74e53efc1c20aea59be/tenor.gif", "https://media1.tenor.com/images/f03ec2fc5f712b344f5b35d644140236/tenor.gif", "https://media1.tenor.com/images/cc5bc86ee3be2219b0976d320ecf5276/tenor.gif", "https://media1.tenor.com/images/9982265fa4c53204c66ea7fc9997aee0/tenor.gif"];
-		var rdmgif2 = Math.floor(Math.random()*rdmgif.length);
-		embed.setDescription(message.author.username + " kick the nuts of " + member.user.username)
-		embed.setAuthor(bot.user.username, bot.user.avatarURL)
-		embed.setColor(0x00AE86)
-		embed.setFooter(bot.user.username, bot.user.avatarURL);
-		embed.setImage(rdmgif[rdmgif2])
-		embed.addField("Rip the nuts of " + member.user.username, "¯\_(ツ)_/¯")
-		embed.setTimestamp()
-		message.channel.send(nutembed);
-	}
+		message.channel.send("`<@${message.author.id}>  **KICKS THE BALLZ OF** <@${message.mentions.users.first().id}>`
 }
 });
 

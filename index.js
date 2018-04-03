@@ -311,14 +311,14 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
   }
   
   if(command === "botinfo") {
-			let bicon = bot.user.displayAvatarURL;
+			let bicon = client.user.displayAvatarURL;
 			let botembed = new Discord.RichEmbed()
 			.setDescription("**Bot Information**")
 			.setColor("#072ebc")
 			.setThumbnail(bicon)
-			.addField("Bot Name", bot.user.username)
+			.addField("Bot Name", client.user.username)
 			.addField("Bot info", "I'm an A.I Bot created by **xFreshie and Eshan**. Please use **-help** to check my commands. Have fun :wink:")
-			.addField("Created on", bot.user.createdAt);
+			.addField("Created on", client.user.createdAt);
             message.channel.send(botembed);
   }
   

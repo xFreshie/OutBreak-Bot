@@ -23,7 +23,6 @@ client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`); 
   // Example of changing the bot's playing game to something useful. `client.user` is what the
   // docs refer to as the "ClientUser".
-  client.user.setActivity(`OMAE WA MOU SHINDEIRU`);
 });
 
 client.on("guildCreate", guild => {
@@ -538,17 +537,11 @@ if(command === "coin") {
   const coin = getRandomInt(0, 1)
   message.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
 }
-if(command === "quote") {
- await message.channel.messages.fetch({around: args[0], limit: 1})
-  .then(messaged => {
-    const messages = messaged.first();
-    const embed = new Discord.MessageEmbed()
-      .setColor(4870738)
-      .setThumbnail(`${messages.author.avatarURL()}`)
-      .setAuthor(`By ${messages.author.tag} (${messages.author.id})`, `${messages.author.avatarURL()}`)
-      .addField("**Message content:**", `${messages.content}`, true);
-    message.channel.send({embed})
-  });
+if(command === "setgame") {
+  let type = args;
+  if (!args || args.size == 0) type = 0
+ client.user.setActivity(game.join(" "), {type: type});
+}
 }
 });
 

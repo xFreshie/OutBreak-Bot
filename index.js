@@ -243,8 +243,8 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
     // This command must be limited to mods and admins. In this example we just hardcode the role names.
     // Please read on Array.some() to understand this bit: 
     // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
-    if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+		if(!message.member.hasPermission('KICK_MEMBERS'))
+		return message.reply("You can't kick... guys don't be silly. :/ !");
     
     // Let's first check if we have a member and if we can kick them!
     // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
@@ -268,8 +268,8 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
     // In the real world mods could ban too, but this is just an example, right? ;)
-    if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+		if(!message.member.hasPermission('BAN_MEMBERS'))
+		return message.reply("You can't ban.. guys, don't be silly. :/ !");
     
     let member = message.mentions.members.first();
     if(!member)
@@ -526,24 +526,22 @@ if(command === "pathi") {
 		file: (pathii[Math.floor(Math.random() * pathii.length)])
 	});
 }
-if(command === "discrim") {
-    if (!message.args[0]) message.args[0] = message.author.discriminator
-    if (message.args[0].length !== 4) return send("Discriminators are 4 numbers")
-    let disc = message.args[0].replace(/[^0123456789]/g, "")
-    if (disc.length !== 4) return send("Discriminators are 4 numbers")
-
-    client.shard.broadcastEval("this.users.filter(u => u.discriminator === '"+disc+"').map(u => u.username)").then(ret => {
-        for (i=0;i<ret.length-1;i++) {
-            ret[0].concat(ret[i+1])
-        }
-        let filt = {}
-        for (i=0;i<ret[0].length;i++) {
-            filt[ret[0][i]] = true
-        }
-        filt = Object.keys(filt)
-        message.channel.send("**Users with the Discriminator: "+disc+"**\n"+filt.join(", "))
-    })
-}
+if(command === "nuts") {
+				let member = message.mentions.members.first()
+				if(!member) message.reply("auto-kick-in-the-nuts ?")
+				else {
+					const embed = new Discord.RichEmbed()
+					var rdmgif =["https://media1.tenor.com/images/348eae99cbaf68283903d74ee85e67ce/tenor.gif", "https://media1.tenor.com/images/e98b912ad0f5e74e53efc1c20aea59be/tenor.gif", "https://media1.tenor.com/images/f03ec2fc5f712b344f5b35d644140236/tenor.gif", "https://media1.tenor.com/images/cc5bc86ee3be2219b0976d320ecf5276/tenor.gif", "https://media1.tenor.com/images/9982265fa4c53204c66ea7fc9997aee0/tenor.gif"];
+					var rdmgif2 = Math.floor(Math.random()*rdmgif.length);
+						embed.setTitle(message.author.username + " kick the nuts of " + member.user.username)
+						embed.setAuthor(bot.user.username, bot.user.avatarURL)
+						embed.setColor(0x00AE86)
+						embed.setFooter(bot.user.username, bot.user.avatarURL);
+						embed.setImage(rdmgif[rdmgif2])
+						embed.addField("Rip the nuts of " + member.user.username, "¯\_(ツ)_/¯")
+						embed.setTimestamp()
+						message.channel.send({embed});
+				}
 });
 
 client.login(process.env.BOT_TOKEN);

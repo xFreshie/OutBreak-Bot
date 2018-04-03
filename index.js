@@ -542,6 +542,7 @@ exports.run = (bot, msg, [args, ...game]) => {
   let type = args;
   if (!args || args.size == 0) type = 0
   bot.user.setActivity(game.join(" "), {type: type});
+	message.channel.send("Game set.");
 }
 }
 });

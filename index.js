@@ -530,8 +530,8 @@ if(command === "nuts") {
 	let member = message.mentions.members.first()
 	if(!member) message.reply("you wanna kick em in the nuts?")
 	else {
-		message.channel.send("`<@${message.author.id}>  **KICKS THE BALLZ OF** <@${message.mentions.users.first().id}>`
-}
+		message.channel.send(`<@${message.author.id}> **KICKS THE BALLZ OF** <@${message.mentions.users.first().id}>`)
+	}
 });
 
 client.login(process.env.BOT_TOKEN);

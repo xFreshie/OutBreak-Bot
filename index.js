@@ -488,7 +488,6 @@ if(command === "dmfresh") {
         embed.addField("By: ", message.author.username, true)
 
         bot.client.users.get(config.owner_id).send({embed})
-    })
 }
 });
 

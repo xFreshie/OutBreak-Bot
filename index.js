@@ -504,6 +504,13 @@ if(command === "straight") {
 	  let useeeeer = message.mentions.users.first() ? message.mentions.users.first() : message.author
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
+if(command === "randomfact") {
+        if (message.guild && !message.channel.permissionsFor(message.guild.me).has(["SEND_MESSAGES", "VIEW_CHANNEL"])) return;
+        const { text } = await get("http://randomfactgenerator.net/").catch(() => message.say("There was an error"));
+        const root = parse(text);
+        const article = root.querySelector("#z");
+        return message.reply(`Random fact: ${article.childNodes[0].rawText}`);
+}
 });
 
 client.login(process.env.BOT_TOKEN);

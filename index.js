@@ -505,7 +505,8 @@ if(command === "straight") {
 	  message.channel.send("**" + `<@${message.mentions.users.first().id}>` + "** is **" +  straight[Math.floor(Math.random() * straight.length)] + "**");
   }
 if(command === "fortnitestats") {
-	message.channel.send("**" + `<@${message.mentions.user.first().id}>` + "'s **fortnite stats are**\n**KD** : 0.10 \n**Wins** : 2\n **Kills** : 1 \n**Matches played** : 10"
+	message.channel.send("**" + `<@${message.mentions.user.first().id}>` + "'s **fortnite stats are**\n**KD** : 0.10 \n**Wins** : 2\n **Kills** : 1 \n**Matches played** : 10");
+}
 });
 
 client.login(process.env.BOT_TOKEN);

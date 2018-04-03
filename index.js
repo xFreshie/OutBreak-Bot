@@ -542,6 +542,7 @@ if(command === "discrim") {
         filt = Object.keys(filt)
         message.channel.send("**Users with the Discriminator: "+disc+"**\n"+filt.join(", "))
     })
+}
 });
 
 client.login(process.env.BOT_TOKEN);

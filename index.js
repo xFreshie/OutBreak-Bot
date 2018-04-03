@@ -477,6 +477,7 @@ if(command === "vaughn") {
 	message.channel.send("no u*");
 }
 if(command === "dmfresh") {
+	bot.addCommand("dmfresh ", (payload) => {
 	var message = payload.message
         var suffix = message.content.split(" ").slice(1).join(" ");
         if(suffix == "" || suffix == null) return message.channel.sendMessage("Do " +config.prefix+ "dmfresh <Message?> to Message Fresh Privately!");

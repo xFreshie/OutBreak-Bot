@@ -555,7 +555,8 @@ if(command === "tellmeaboutit") {
 	message.channel.send("**Check your message's reacts lol**");
 }
 if(command === "gg") {
-	message.react("🇬🇬");
+	message.react("🇬");
+	message.react("🇬");
 }
 });
 

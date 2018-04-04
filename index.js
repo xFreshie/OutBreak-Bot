@@ -555,7 +555,7 @@ if(command === "tellmeaboutit") {
 	message.channel.send("**Check your message's reacts lol**");
 }
 if(command === "setprefix") {
-			let guild = await client.GUILDS.get(message.guild.id);
+			let guild = message.guild.id
 			if (!guild) {client.respond(message, "Something went wrong :v"); return;}
 			
 			if (!args[0]) {client.respond(message, 'Current prefix: \`' + (guild.prefix ? guild.prefix : config.prefix) + '\`'); return;}

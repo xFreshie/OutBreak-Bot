@@ -566,11 +566,7 @@ if(command === "setprefix") {
 			guild.prefix = args[0]; 
 			client.GUILDS.set(guild.id, guild);
 			client.respond(message, "Changed prefix to: \`" + args[0] + '\`');
-			
-		} catch (err) {
-			message.channel.send('An error occured :v');
-			client.error(err, message);
-		}
+}
     }
 });
 

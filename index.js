@@ -558,7 +558,7 @@ if(command === "discrim") {
         const discrim = args.length == 1 ? args[0] : msg.author.discriminator;
         if (!(discrim.split("").every(v => !isNaN(parseInt(v))))) return await mmessage.channel.send(":x: A discriminator can only contain digits.");
         if (discrim.length != 4) return await message.channel.send(":x: A discriminator is always 4 digits.");
-        const users = mentions.users.filter(user => user.discriminator == discrim).map(user => user.tag).slice(0, 9);
+        const users = message.users.filter(user => user.discriminator == discrim).map(user => user.tag).slice(0, 9);
         let embed = new MessageEmbed()
         .setTitle(`Users with #${discrim}`)
         .setAuthor(message.author.tag, message.author.avatarURL())

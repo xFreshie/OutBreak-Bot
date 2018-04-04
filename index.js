@@ -545,6 +545,10 @@ exports.run = (bot, msg, [args, ...game]) => {
 	message.channel.send("Game set.");
 }
 }
+if(command === "dabpolice") {
+	message.react("👮");
+	message.channel.send("Calling all units, shots fired\nShots fired in front of the Supreme store\nThere's about to be a 261 in progress\nSend all available units\nSend in the back-up\nSend in the big guns\nSend in the canine unit\nSend in the... f**k");
+}
 });
 
 client.login(process.env.BOT_TOKEN);

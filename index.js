@@ -567,7 +567,6 @@ if(command === "setprefix") {
 			client.GUILDS.set(guild.id, guild);
 			client.respond(message, "Changed prefix to: \`" + args[0] + '\`');
 }
-    }
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -554,6 +554,9 @@ if(command === "tellmeaboutit") {
 	message.react("👌");
 	message.channel.send("**Check your message's reacts lol**");
 }
+if(command === "gg") {
+	message.react("🇬🇬");
+}
 });
 
 client.login(process.env.BOT_TOKEN);

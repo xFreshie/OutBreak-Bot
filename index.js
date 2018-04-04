@@ -554,10 +554,19 @@ if(command === "tellmeaboutit") {
 	message.react("👌");
 	message.channel.send("**Check your message's reacts lol**");
 }
-if(command === "gg") {
-	message.react("🇬");
-	message.react("🇬");
-}
+if(command === "discrim") {
+        const discrim = args.length == 1 ? args[0] : msg.author.discriminator;
+        if (!(discrim.split("").every(v => !isNaN(parseInt(v))))) return await mmessage.channel.send(":x: A discriminator can only contain digits.");
+        if (discrim.length != 4) return await message.channel.send(":x: A discriminator is always 4 digits.");
+        const users = mentions.users.filter(user => user.discriminator == discrim).map(user => user.tag).slice(0, 9);
+        let embed = new MessageEmbed()
+        .setTitle(`Users with #${discrim}`)
+        .setAuthor(message.author.tag, message.author.avatarURL())
+        .setFooter("Limited to 10 users.")
+        .setTimestamp(new Date())
+        .setDescription(users.join("\n"));
+        await message.channel.send(embed);
+    }
 });
 
 client.login(process.env.BOT_TOKEN);

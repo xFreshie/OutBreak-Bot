@@ -615,5 +615,13 @@ if(command === "nitro") {
   .setThumbnail("http://i.imgur.com/Ls5pRMF.png");
   message.channel.send(nitro2)
 };
+if(command === "uptime") {
+const moment = require("moment");
+require("moment-duration-format");
+    const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
+    const bleh = ["Uptime:", "This is how long I\'ve been up for:", "Still alive and been for this long:"]
+  
+    message.channel.send(`${bleh[Math.floor(Math.random() * bleh.length)]} \`${duration}\``)
+};
 });
 client.login(process.env.BOT_TOKEN);

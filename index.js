@@ -638,8 +638,11 @@ const middle = ['douche', 'ass', 'turd', 'rectum', 'butt', 'cock', 'shit', 'crot
 const end = ['pilot', 'canoe', 'captain', 'pirate', 'hammer', 'knob', 'box', 'jockey', 'nazi', 'waffle', 'goblin', 'blossom', 'biscuit', 'clown', 'socket', 'monster', 'hound', 'dragon', 'balloon', 'apple-john', 'baggage', 'barnacle', 'bladder', 'boar-pig', 'bugbear', 'bum-bailey', 'canker-blossom', 'clack-dish', 'clotpole', 'coxcomb', 'codpiece', 'death-token', 'dewberry', 'flap-dragon', 'flax-wench', 'flirt-gill', 'foot-licker', 'fustilarian', 'giglet', 'gudgeon', 'haggard', 'harpy', 'hedge-pig', 'horn-beast', 'hugger-mugger', 'joithead', 'lewdster', 'lout', 'maggot-pie', 'malt-worm', 'mammet', 'measle', 'minnow', 'miscreant', 'moldwarp', 'mumble-news', 'nut-hook', 'pigeon-egg', 'pignut', 'puttock', 'pumpion', 'ratsbane', 'scut', 'skinsmate', 'strumpet', 'varlot', 'vassal', 'whey-face', 'wagtail', 'squeegee', 'turtle', 'cabbage', 'bomb', 'sniffer', 'binkie', 'stump', 'nugget', 'whistle', 'twig', 'knuckle', 'burger', 'hotdog', 'loaf', 'freckle', 'soldier', 'kernal', 'shingle', 'warrior', 'hemorrhoid', 'fuckface', 'asshole', 'scumbucket', 'toerag', 'hackwack', 'imbecile', 'stunodigan', 'maggot', 'hipster', 'gargabe', 'jerkstore']
 
 const roll = type => type[Math.floor(Math.random() * type.length)]
-
-  message.channel.send(`${user}, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
+	let member = message.mentions.members.first()
+	if(!member) message.reply("you wanna kick em in the nuts?")
+	else {
+		message.channel.send(`<@${message.mentions.users.first().id}>, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
+	}
 };
 });
 client.login(process.env.BOT_TOKEN);

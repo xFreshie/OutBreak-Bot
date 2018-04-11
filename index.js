@@ -8,6 +8,7 @@ const YTDL = require('ytdl-core');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
+const client = new Discord.Client();
 //This is the chatbot for your client.
 client.on("message", message => {
   if (message.channel.type === "dm") {

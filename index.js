@@ -626,7 +626,7 @@ if(command === "discrim") {
     } else {
         embed.setTitle(`Users Found With Discrim ${args}`)
         .setDescription(`${res.join('\n')}`)
-        .setColor(#072ebc)
+        .setColor("#072ebc")
     message.channel.send({embed})
       }
 });

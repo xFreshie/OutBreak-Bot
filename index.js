@@ -598,5 +598,24 @@ if(command === "spam") {
 		return message.reply("You can't spam.. guys, don't be silly. :/ !");
 	message.channel.send("I ain't SwegBot you stupid idiot, go tell him to spam, not me.\n ME A GOKD BOI");
 }
+if(command === "nitro") {
+  var nitro = '';
+  message.guild.members.map(usr => {
+    if (usr.avatar != null) {
+      if (usr.avatar.startsWith("a_")) {
+        nitro += usr.mention + "\n";
+      }
+    }
+  });
+
+  var nitro = new client.methods.Embed()
+  .setAuthor("Nitro Users", "http://i.imgur.com/H5CwSY2.png")
+  .setDescription("The following users on this guild have nitro:\n\n" + nitro)
+  .setColor(client.funcs.hex(true))
+  .setThumbnail("http://i.imgur.com/Ls5pRMF.png")
+
+
+  message.channel.send({embed: nitro})
+};
 });
 client.login(process.env.BOT_TOKEN);

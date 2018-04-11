@@ -23,7 +23,7 @@ bot.on("message", function(message) {
             message.channel.send(response.output).catch(console.error);
             message.channel.stopTyping();
           }, Math.random() * (1 - 3) + 1 * 1000);
-        });
+	})
     }
     //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
     // --------------------------------------------

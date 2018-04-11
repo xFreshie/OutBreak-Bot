@@ -9,7 +9,7 @@ const YTDL = require('ytdl-core');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
-bot.on("message", function(message) {
+client.on("message", function(message) {
     console.log(`(General) ${message.author.id}: ${message.content}`);
     if (message.author.equals(bot.user)) return;
     // -----------------------------------------

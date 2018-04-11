@@ -9,11 +9,11 @@ const YTDL = require('ytdl-core');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
-//This is the chatbot for your client.
 bot.on("message", function(message) {
     console.log(`(General) ${message.author.id}: ${message.content}`);
     if (message.author.equals(bot.user)) return;
-//
+    // -----------------------------------------
+    //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this
     var botidf = '<@411810957258522624>';
     // var botidfl = botidf.toLowerCase();
     if (message.content.startsWith(botidf)) {
@@ -25,7 +25,8 @@ bot.on("message", function(message) {
           }, Math.random() * (1 - 3) + 1 * 1000);
         });
     }
-//DO NOT TOUCH IT
+    //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
+    // --------------------------------------------
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.

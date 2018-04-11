@@ -608,14 +608,14 @@ if(command === "nitro") {
     }
   });
 
-  var nitro = new client.methods.Embed()
+  var nitro2 = new Discord.RichEmbed()
   .setAuthor("Nitro Users", "http://i.imgur.com/H5CwSY2.png")
   .setDescription("The following users on this guild have nitro:\n\n" + nitro)
   .setColor(client.funcs.hex(true))
   .setThumbnail("http://i.imgur.com/Ls5pRMF.png")
 
 
-  message.channel.send({embed: nitro})
+  message.channel.send(nitro2)
 };
 });
 client.login(process.env.BOT_TOKEN);

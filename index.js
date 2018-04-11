@@ -618,7 +618,7 @@ if(command === "nitro") {
 if(command === "discrim") {
     let args = message.content.split(' ').splice(1).join(' ') || message.author.discriminator;
     const res = client.users.filter(u => u.discriminator === `${args}`).map(u => u.username);
-    var embed = new client.methods.Embed()
+    var embed = new Discord.RichEmbed()
     if (res.length === 0) {
         embed.setTitle(`No users found with discrim ${args}`)
         .setColor("#072ebc")

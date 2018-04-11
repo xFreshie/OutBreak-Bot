@@ -574,34 +574,11 @@ if(command === "goodlaughing") {
 	message.channel.send("This moderators are to funny the can say what the want but when i say 1 time Rekt and ez? The warn me and kick me from the server Fresh/xStar and neko saying all the time to Players 'This kid is to funny hahaah i cant stop laugh'''around 7 times and when i say because i kild him Ez? the warn me for toxic is that toxic the are saying Kids and noob to me but when i say Rekt the warn me instant to funny i ask Neko to f3 because he spammed me when he eating soup he also dont wanna show me his screenshot i ask Why you dont showing? Fresh say because he is staff? SO? hahaaha so if you are rank moderator you mean that you cant hack? thats so sad the doing notting when someone is doing racist and saying the N word to people i told you already frost is dead when trash left everything changed really sad");
 }
 if(command === "warn") {
-//Permissions
-		if(!message.member.hasPermission('MANAGE_MESSAGES'))
-		return message.reply("You can't warn.. guys, don't be silly. :/ !");
-	
-    if (!message.args[" "]) {
-        return send("**To warn a user:** `" + config.prefix + "warn <@user> <reason>`")
-    }
-    if (!message.mentions.users.first()) {
-        return send("**To warn a user please mention them**")
-    }
-    if (!message.args[" "]) {
-        return send("**Please provide a reason for the warn.**")
-    }
-    let user = message.mentions.users.first();
-    let msg = message.suffix.substr(message.suffix.indexOf(" ") + 1);
-    let embed = {
-        title: ":cop: You have been warned by: " + message.author.username,
-        color: 0xFF0000,
-        description: ":question: Reason: " + msg + "\n\u200B",
-        timestamp: new Date()
-    }
-    client.users.get(user.id).send("", {
-        embed
-    }).then(send(message.mentions.users.first().username + " **Has been warned and given a strike.**")).catch(err => {
-        console.log(err)
-        send("**This user has Direct Messages disabled.**")
-    })
-    strikes(message.guild.id, user.id, 1)
+	let member = message.mentions.members.first()
+	if(!member) message.reply("**Usage** -warn (user) (reason)")
+	else
+		message.channel.send(`<{@${message.mentions.users.first().id}> **was warned by** <@${message.author.id}>`)
+	}
 }
 });
 

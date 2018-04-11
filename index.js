@@ -10,8 +10,8 @@ const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
 //This is the chatbot for your client.
 const client = new Discord.Client();
-client.on("message", message => {
-  if (message.channel.type === "dm") {
+var botid = '<@411810957258522624>';
+  if (message.startsWith === "botid") {
     clbot.write(message.content, (response) => {
       message.channel.startTyping();
       setTimeout(() => {

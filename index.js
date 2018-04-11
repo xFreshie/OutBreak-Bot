@@ -573,6 +573,22 @@ if(command === "setprefix") {
 if(command === "goodlaughing") {
 	message.channel.send("This moderators are to funny the can say what the want but when i say 1 time Rekt and ez? The warn me and kick me from the server Fresh/xStar and neko saying all the time to Players 'This kid is to funny hahaah i cant stop laugh'''around 7 times and when i say because i kild him Ez? the warn me for toxic is that toxic the are saying Kids and noob to me but when i say Rekt the warn me instant to funny i ask Neko to f3 because he spammed me when he eating soup he also dont wanna show me his screenshot i ask Why you dont showing? Fresh say because he is staff? SO? hahaaha so if you are rank moderator you mean that you cant hack? thats so sad the doing notting when someone is doing racist and saying the N word to people i told you already frost is dead when trash left everything changed really sad");
 }
+if(command === "addrole") {
+      // Check if the message mentions a user.
+      if (message.mentions.members.size === 0) return message.reply('Please mention a user to give the role to.');
+      const member = message.mentions.members.first();
+      // This is the name of the role. For example, if you do 'role -add @York#2400 The Idiot Himself', the name of the role would be 'The Idiot Himself'.
+      const name = args.slice(1).join(' ');
+      // Find the role on the guild.
+      const role = message.guild.roles.find('name', name);
+      // End the command if the bot cannot find the role on the server.
+      if (!role) return message.reply('I can\'t seem to find that role.');
+      try {
+        await member.addRole(role);
+        await message.channel.send(`I've added the ${name} role to ${member.dsiplayName}.`);
+      } catch (e) {
+        console.log(e);
+      }
 });
 
 client.login(process.env.BOT_TOKEN);

@@ -114,7 +114,7 @@ client.on("guildDelete", guild => {
 	  "5% straight",
 	  "10% straight",
 	  "15% straight",
-	  "20% gaystraight",
+	  "20% straight",
 	  "25% straight",
 	  "30% straight",
 	  "35% straight",
@@ -289,13 +289,22 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
     message.reply(`${member.user.tag} has been banned by ${message.author.tag} because: ${reason}`);
       }
   
-  if(command === "purge") {
+  if(command === "prune") {
     // This command removes all messages from all users in the channel, up to 100.
-    if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
+    if(!message.member.hasPermission('MANAGE_MESSAGES'))
       return message.reply("Sorry, you don't have permissions to use this!");
     // get the delete count, as an actual number.
-	  message.reply(", This command is disabled due to it not working correctly.");
-  }
+    let amount = message.content.split(" ").splice(1, 2).join(" ");
+    if(amount < 1) {
+      return message.reply("The amount of messages to remove is 1-100.");
+    }
+    if(amount > 100) {
+      return message.reply("Choose a number between 1-100.");
+    }
+    message.channel.bulkDelete(amount);
+    message.delete()
+    message.channel.send(`${message.author} Pruned: ${amount} messages`).then(m => m.delete(2500));
+};
   
   if(command === "8ball") {
     if (args[1]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
@@ -582,7 +591,7 @@ if(command === "invite") {
 if(command === "help") {
 	message.react("📧");
 	message.channel.send("**Please check your dms** :mailbox_with_mail:");
-	message.author.send("**OutBreak** commands:\n \n``-help`` - Shows this message\n``-ping`` - Check the bot's latency\n``-userinfo @user`` - Shows the info about the tagged user.\n \n__**Moderation**__:\n \n``-kick @user reason`` - Kicks the user with the following reason\n``-ban @user reason`` - Bans the user with the following reason\n``-purge (amount)`` - Purges the amount of messages\n``-warn @user reason`` - Warns the user with the following reason\n \n__**Fun**__:\n \n``-8ball (question)`` - Selects a random answer for your question\n``-dab`` - Dabbin'\n``-dabpolice`` - DAB POLICE INCOMING\n``-whosyourdada`` - MY DADA\n``-roast @user`` - Roasts the user badly\n``-pizza`` - PIZZAA\n``-shoot`` - Shoot them criminals\n``-nou`` - Your mom gay.. no u\n``-gay`` - Gay simulator\n``-straight`` - Straight simulator\n``-dance`` - Sends a random dancing gif\n``-hug`` - You can finally hug your besties! ~~or lonely people~~\n``-nuts`` - Kicks em in the nutz\n``-coin`` - Heads or Tails\n``-meme`` - Random normie memes\n \n__**Other Useful Commands**__:\n \n``-say`` - The bot says the thing...\n``-serverinfo`` - Information about the server\n``-avatar @user`` - Sends the url of the avatar of a person\n``-roles`` - Displays the roles in the server\n \n__**Chat Bot**__:\n \nTag ``@OutBreak`` for him to talk with you!\n \n __**Other helping**__: \n \n**Official Server invite**: https://discord.gg/aSfZp9D \n**Bot Invite Link**: ``-invite``\nIf you want **help** with anything else, private message **Freshie#7896**");
+	message.author.send("**OutBreak** commands:\n \n``-help`` - Shows this message\n``-ping`` - Check the bot's latency\n``-userinfo @user`` - Shows the info about the tagged user.\n \n__**Moderation**__:\n \n``-kick @user reason`` - Kicks the user with the following reason\n``-ban @user reason`` - Bans the user with the following reason\n``-prune (amount)`` - prunes the amount of messages\n``-warn @user reason`` - Warns the user with the following reason\n \n__**Fun**__:\n \n``-8ball (question)`` - Selects a random answer for your question\n``-dab`` - Dabbin'\n``-dabpolice`` - DAB POLICE INCOMING\n``-whosyourdada`` - MY DADA\n``-roast @user`` - Roasts the user badly\n``-pizza`` - PIZZAA\n``-shoot`` - Shoot them criminals\n``-nou`` - Your mom gay.. no u\n``-gay`` - Gay simulator\n``-straight`` - Straight simulator\n``-dance`` - Sends a random dancing gif\n``-hug`` - You can finally hug your besties! ~~or lonely people~~\n``-nuts`` - Kicks em in the nutz\n``-coin`` - Heads or Tails\n``-meme`` - Random normie memes\n \n__**Other Useful Commands**__:\n \n``-say`` - The bot says the thing...\n``-serverinfo`` - Information about the server\n``-avatar @user`` - Sends the url of the avatar of a person\n``-roles`` - Displays the roles in the server\n \n__**Chat Bot**__:\n \nTag ``@OutBreak`` for him to talk with you!\n \n __**Other helping**__: \n \n**Official Server invite**: https://discord.gg/aSfZp9D \n**Bot Invite Link**: ``-invite``\nIf you want **help** with anything else, private message **Freshie#7896**");
 }
 if(command === "spam") {
 		if(!message.member.hasPermission('KICK_MEMBERS'))

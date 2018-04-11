@@ -1,5 +1,6 @@
 // Load up the discord.js library
 const Discord = require("discord.js");
+const client = new Discord.Client();
 //ChatBot Configs
 const Cleverbot = require("cleverbot-node");
 const economy = require('discord-eco');
@@ -9,18 +10,17 @@ const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
 //This is the chatbot for your client.
-const client = new Discord.Client();
-var botid = '<@411810957258522624>';
-  if (message.startsWith === "botid") {
-    clbot.write(message.content, (response) => {
-      message.channel.startTyping();
-      setTimeout(() => {
-        message.channel.send(response.output).catch(console.error);
-        message.channel.stopTyping();
-      }, Math.random() * (1 - 3) + 1 * 1000);
-    });
-  }
-});
+    var botidf = '<@411810957258522624>';
+    // var botidfl = botidf.toLowerCase();
+    if (message.content.startsWith(botidf)) {
+        clbot.write(message.content.split(20), (response) => {
+          message.channel.startTyping();
+          setTimeout(() => {
+            message.channel.send(response.output).catch(console.error);
+            message.channel.stopTyping();
+          }, Math.random() * (1 - 3) + 1 * 1000);
+        });
+    }
 //DO NOT TOUCH IT
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,

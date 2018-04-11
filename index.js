@@ -586,7 +586,7 @@ if(command === "help") {
 if(command === "spam") {
 		if(!message.member.hasPermission('KICK_MEMBERS'))
 		return message.reply("You can't spam.. guys, don't be silly. :/ !");
-	message.channel.send("spamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspamspam");
+	message.channel.send("I ain't SwegBot you stupid idiot, go tell him to spam, not me.\n ME A GOKD BOI");
 }
 });
 client.login(process.env.BOT_TOKEN);

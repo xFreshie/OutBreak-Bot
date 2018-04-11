@@ -609,5 +609,6 @@ const db = require('quick.db')
     })
 
 }
+	}
 });
 client.login(process.env.BOT_TOKEN);

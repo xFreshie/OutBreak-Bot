@@ -577,7 +577,7 @@ if(command === "warn") {
 	let member = message.mentions.members.first()
 	if(!member) message.reply("**Usage** -warn (user) (reason)")
 	else {
-		message.channel.send(`<{@${message.mentions.users.first().id}> **was warned by** <@${message.author.id}>`)
+		message.channel.send(`<@${message.mentions.users.first().id}> **was warned by** <@${message.author.id}>`)
 	}
 }
 });

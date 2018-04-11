@@ -586,9 +586,8 @@ if(command === "addrole") {
       try {
         await member.addRole(role);
         await message.channel.send(`I've added the ${name} role to ${member.dsiplayName}.`);
-      } catch (e) {
-        console.log(e);
       }
+}
 });
 
 client.login(process.env.BOT_TOKEN);

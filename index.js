@@ -578,13 +578,13 @@ if(command === "warn") {
 		if(!message.member.hasPermission('MANAGE_MESSAGES'))
 		return message.reply("You can't warn.. guys, don't be silly. :/ !");
 	
-    if (!message.args[0]) {
+    if (!message.args[" "]) {
         return send("**To warn a user:** `" + config.prefix + "warn <@user> <reason>`")
     }
     if (!message.mentions.users.first()) {
         return send("**To warn a user please mention them**")
     }
-    if (!message.args[1]) {
+    if (!message.args[" "]) {
         return send("**Please provide a reason for the warn.**")
     }
     let user = message.mentions.users.first();

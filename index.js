@@ -341,10 +341,11 @@ if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr.
 			message.channel.send(serverembed);
   }
   
-  if(command === "help") {
-	  message.channel.send("**Please check your dms** :mailbox_with_mail:");
-    	message.author.send('**=== Help ===**\n\n**Note:** Please use ``-staffcommands`` for staff commands. \n**-help** = Shows you this page.\n**-serverinfo** = Shows you the info about the discord server\n**-userinfo** = Shows the info about you.\n**-8ball** = Selects a random answer about your question.\n**-ping** = Pings, what else.\n**-meme** = Our love, our life, our dank memes.\n**-dab** = DABS ON EM HATERZ.\n**-roast** = Roasts people\n**-say** = Says the message that the user told the bot to say\n**-whosyourdada** = you know\n**-pizza** = You know this too lol\n**-shoot** = shoots people\n**-nou** = no you\n**-avatar** = displays the profile picture of the tagged person\n**-gay** = gay simulator\n**-straight** = Straight simulator\n**-roles** = Displays the roles in the server\n**-dance** = People dance, not the bot. silly.\n**-hug** = Huggies!\n**-dabpolice** = SHOTS FIRED\n**-nuts** = kick em\n**-coin** = Heads or Tails\n*Type** @Outbreak (Question or anything), He answers it or talks to you.\n``Please use - as the prefix``\n**Special thanks to ethan for all of this**\n**Chatbot is down for some time because its not working. Will be fixed soon.**');
-  }
+if(command === "newhelp") {
+	message.react("📧");
+	message.channel.send("**Please check your dms** :mailbox_with_mail:");
+	message.author.send("**OutBreak** commands:\n \n``-help`` - Shows this message\n``-ping`` - Check the bot's latency\n``-userinfo @user`` - Shows the info about the tagged user.\n \n__**Moderation**__:\n \n``-kick @user reason`` - Kicks the user with the following reason\n``-ban @user reason`` - Bans the user with the following reason\n``-purge (amount)`` - Purges the amount of messages\n``-warn @user reason`` - Warns the user with the following reason\n \n__**Fun**__:\n \n``-8ball (question)`` - Selects a random answer for your question\n``-dab`` - Dabbin'\n``-dabpolice`` - DAB POLICE INCOMING\n``-whosyourdada`` - MY DADA\n``-roast @user`` - Roasts the user badly\n``-pizza`` - PIZZAA\n``-shoot`` - Shoot them criminals\n``-nou`` - Your mom gay.. no u\n``-gay`` - Gay simulator\n``-straight`` - Straight simulator\n``-dance`` - Sends a random dancing gif\n``-hug`` - You can finally hug your besties! ~~or lonely people~~\n``-nuts`` - Kicks em in the nutz\n``-coin`` - Heads or Tails\n``-meme`` - Random normie memes\n \n__**Other Useful Commands**__:\n \n``-say`` - The bot says the thing...\n``-serverinfo`` - Information about the server\n``-avatar @user`` - Sends the url of the avatar of a person\n``-roles`` - Displays the roles in the server\n \n__**Chat Bot**__:\n \nTag ``@OutBreak`` for him to talk with you!\n \n __**Other helping**__: \n \n**Official Server invite**: https://discord.gg/aSfZp9D \n**Bot Invite Link**: ``-invite``");
+}
   
   if(command === "meme") {
 	message.delete().catch(O_o=>{});
@@ -579,11 +580,6 @@ if(command === "warn") {
 	else {
 		message.channel.send(`<@${message.mentions.users.first().id}> **was warned by** <@${message.author.id}>`)
 	}
-}
-if(command === "newhelp") {
-	message.react("📧");
-	message.channel.send("**Please check your dms** :mailbox_with_mail:");
-	message.author.send("**OutBreak** commands:\n \n``-help`` - Shows this message\n``-ping`` - Check the bot's latency\n``-userinfo @user`` - Shows the info about the tagged user.\n \n__**Moderation**__:\n \n``-kick @user reason`` - Kicks the user with the following reason\n``-ban @user reason`` - Bans the user with the following reason\n``-purge (amount)`` - Purges the amount of messages\n``-warn @user reason`` - Warns the user with the following reason\n \n__**Fun**__:\n \n``-8ball (question)`` - Selects a random answer for your question\n``-dab`` - Dabbin'\n``-dabpolice`` - DAB POLICE INCOMING\n``-whosyourdada`` - MY DADA\n``-roast @user`` - Roasts the user badly\n``-pizza`` - PIZZAA\n``-shoot`` - Shoot them criminals\n``-nou`` - Your mom gay.. no u\n``-gay`` - Gay simulator\n``-straight`` - Straight simulator\n``-dance`` - Sends a random dancing gif\n``-hug`` - You can finally hug your besties! ~~or lonely people~~\n``-nuts`` - Kicks em in the nutz\n``-coin`` - Heads or Tails\n``-meme`` - Random normie memes\n \n__**Other Useful Commands**__:\n \n``-say`` - The bot says the thing...\n``-serverinfo`` - Information about the server\n``-avatar @user`` - Sends the url of the avatar of a person\n``-roles`` - Displays the roles in the server\n \n__**Chat Bot**__:\n \nTag ``@OutBreak`` for him to talk with you!\n \n __**Other helping**__: \n \n**Official Server invite**: https://discord.gg/aSfZp9D \n**Bot Invite Link**: ``-invite``");
 }
 if(command === "invite") {
 	message.channel.send("**Invite link sent in pm**");

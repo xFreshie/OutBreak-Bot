@@ -10,7 +10,7 @@ const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
 client.on("message", function(message) {
-    console.log(`(General) ${message.author.username}: ${message.content} in ${message.channel.id}`);
+    console.log(`(General) ${message.author.username}: ${message.content} in ${message.guild.id}`);
     if (message.author.equals(client.user)) return;
     // -----------------------------------------
     //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this

@@ -615,13 +615,19 @@ if(command === "nitro") {
   .setThumbnail("http://i.imgur.com/Ls5pRMF.png");
   message.channel.send(nitro2)
 };
-if(command === "uptime") {
-const moment = require("moment");
-require("moment-duration-format");
-    const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
-    const bleh = ["Uptime:", "This is how long I\'ve been up for:", "Still alive and been for this long:"]
-  
-    message.channel.send(`${bleh[Math.floor(Math.random() * bleh.length)]} \`${duration}\``)
-};
+if(command === "discrim") {
+    let args = message.content.split(' ').splice(1).join(' ') || message.author.discriminator;
+    const res = client.users.filter(u => u.discriminator === `${args}`).map(u => u.username);
+    var embed = new client.methods.Embed()
+    if (res.length === 0) {
+        embed.setTitle(`No users found with discrim ${args}`)
+        .setColor("#072ebc")
+        message.channel.send({embed})
+    } else {
+        embed.setTitle(`Users Found With Discrim ${args}`)
+        .setDescription(`${res.join('\n')}`)
+        .setColor(#072ebc)
+    message.channel.send({embed})
+      }
 });
 client.login(process.env.BOT_TOKEN);

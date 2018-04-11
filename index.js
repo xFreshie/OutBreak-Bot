@@ -10,7 +10,6 @@ const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
 client.on("message", function(message) {
-    console.log(`(General) ${message.author.id}: ${message.content}`);
     if (message.author.equals(bot.user)) return;
     // -----------------------------------------
     //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this
@@ -25,6 +24,7 @@ client.on("message", function(message) {
           }, Math.random() * (1 - 3) + 1 * 1000);
 	})
     }
+}
     //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
     // --------------------------------------------
 // This is your client. Some people call it `bot`, some people call it `self`, 

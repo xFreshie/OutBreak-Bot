@@ -203,17 +203,16 @@ var wot = [
   //Lets do the chatbot
    // -----------------------------------------
     //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this
-    var botidf = '<@411810957258522624>';
-    // var botidfl = botidf.toLowerCase();
-    if (message.content.startsWith(botidf)) {
-        clbot.write(message.content.split(20), (response) => {
-          message.channel.startTyping();
-          setTimeout(() => {
-            message.channel.send(response.output).catch(console.error);
-            message.channel.stopTyping();
-          }, Math.random() * (1 - 3) + 1 * 1000);
-        });
-    }
+client.on("message", message => {
+  if (message.channel.type === "dm") {
+    clbot.write(message.content, (response) => {
+      message.channel.startTyping();
+      setTimeout(() => {
+        message.channel.send(response.output).catch(console.error);
+        message.channel.stopTyping();
+      }, Math.random() * (1 - 3) + 1 * 1000);
+    });
+  }
     //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
     // --------------------------------------------
   // Let's go with a few common example commands! Feel free to delete or change those.

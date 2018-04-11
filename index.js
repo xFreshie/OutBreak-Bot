@@ -10,6 +10,10 @@ const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
 //This is the chatbot for your client.
+bot.on("message", function(message) {
+    console.log(`(General) ${message.author.id}: ${message.content}`);
+    if (message.author.equals(bot.user)) return;
+//
     var botidf = '<@411810957258522624>';
     // var botidfl = botidf.toLowerCase();
     if (message.content.startsWith(botidf)) {

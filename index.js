@@ -2,6 +2,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 //ChatBot Configs
+const db = require('quick.db');
 const Cleverbot = require("cleverbot-node");
 const economy = require('discord-eco');
 const fs = require('fs');
@@ -597,8 +598,6 @@ if(command === "spam") {
 	message.channel.send("I ain't SwegBot you stupid idiot, go tell him to spam, not me.\n ME A GOKD BOI");
 }
 if(command === "setprefix") {
-const db = require('quick.db')
-
     if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('This requires you to have a role with `Administrator`'); // Tell them if they don't have the proper permissions.
     if (!args.join(" ")) return message.channel.send('Please enter arguments. `setPrefix <prefix>`'); // Tell them if they didn't supply any arguments.
 

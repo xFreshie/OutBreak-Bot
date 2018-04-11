@@ -629,5 +629,6 @@ if(command === "discrim") {
         .setColor("#072ebc")
     message.channel.send({embed})
       }
+}
 });
 client.login(process.env.BOT_TOKEN);

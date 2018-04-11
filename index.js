@@ -8,6 +8,19 @@ const YTDL = require('ytdl-core');
 const sql = require("sqlite");
 const clbot = new Cleverbot;
 clbot.configure({botapi: "CC74amM7cQZbj-XPp-OAY1pesPw"});
+//This is the chatbot for your client.
+client.on("message", message => {
+  if (message.channel.type === "dm") {
+    clbot.write(message.content, (response) => {
+      message.channel.startTyping();
+      setTimeout(() => {
+        message.channel.send(response.output).catch(console.error);
+        message.channel.stopTyping();
+      }, Math.random() * (1 - 3) + 1 * 1000);
+    });
+  }
+});
+//DO NOT TOUCH IT
 // This is your client. Some people call it `bot`, some people call it `self`, 
 // some might call it `cootchie`. Either way, when you see `client.something`, or `bot.something`,
 // this is what we're refering to. Your client.
@@ -200,21 +213,6 @@ var pathii = [
 var wot = [
 	'https://media.giphy.com/media/nipbykblMUnu0/giphy.gif'
 ]
-  //Lets do the chatbot
-   // -----------------------------------------
-    //-----------------CHAT MODA FKIN BOT----------------- Better not Touch this  Better not Touch this
-client.on("message", message => {
-  if (message.channel.type === "dm") {
-    clbot.write(message.content, (response) => {
-      message.channel.startTyping();
-      setTimeout(() => {
-        message.channel.send(response.output).catch(console.error);
-        message.channel.stopTyping();
-      }, Math.random() * (1 - 3) + 1 * 1000);
-    });
-  }
-    //-----------------CHAT MODA FKIN BOT-----------------  Better not Touch this  Better not Touch this
-    // --------------------------------------------
   // Let's go with a few common example commands! Feel free to delete or change those.
   //
   if(command === "ping") {

@@ -641,6 +641,5 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 
   message.channel.send(`${user}, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
 };
-	}
 });
 client.login(process.env.BOT_TOKEN);

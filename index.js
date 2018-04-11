@@ -583,10 +583,8 @@ if(command === "addrole") {
       const role = message.guild.roles.find('name', name);
       // End the command if the bot cannot find the role on the server.
       if (!role) return message.reply('I can\'t seem to find that role.');
-      try {
         await member.addRole(role);
         await message.channel.send(`I've added the ${name} role to ${member.dsiplayName}.`);
-      };
 }
 });
 

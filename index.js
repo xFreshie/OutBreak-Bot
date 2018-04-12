@@ -542,7 +542,7 @@ if(command === "coin") {
 if(command === "setgame") {
   let type = args;
   if (!args || args.size == 0) type = 0
-  bot.user.setActivity(game.join(" "), {type: type});
+  client.user.setActivity(game.join(" "), {type: type});
 	message.channel.send("Game set.");
 }
 if(command === "dabpolice") {
@@ -638,14 +638,8 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 	}
 };
   if(command === "math") {
-	  		let bigshaq = 'https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg'
-			let maffs = new Discord.RichEmbed()
-			.setDescription("**Big Shaq**")
-			.setColor("#072ebc")
-			.setThumbnail(bigshaq)
-			.addField("2 plus 2 is 4")
-			.addField("Minus one that's 3 quick maffs")
-            message.channel.send(maffs);
+            message.channel.send('**Big Shaq**: 2+2 is 4 minus 1 thats 3 quick maffs!');
+	  message.channel.send("https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg");
   }
 });
 client.login(process.env.BOT_TOKEN);

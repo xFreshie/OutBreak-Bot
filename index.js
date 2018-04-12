@@ -662,6 +662,6 @@ client.on("message", (message) => {
   if(message.content === "lol") {
     message.channel.send("roflmaotntpmp");
   }
-}
+})
 });
 client.login(process.env.BOT_TOKEN);

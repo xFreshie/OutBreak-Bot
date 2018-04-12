@@ -46,12 +46,6 @@ client.on("ready", () => {
   client.user.setActivity(`The ting goes skrra`);
 });
 
-client.on("ready", function() {
-client.setAvatar(fs.readFileSync('./avatar.jpg'), function(err) {
-        if (err) throw err;
-})
-}
-
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -648,5 +642,10 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
         file: (bigshaq[Math.floor(Math.random() * bigshaq.length)])
     });
   }
+client.on("ready", function() {
+client.setAvatar(fs.readFileSync('./avatar.jpg'), function(err) {
+        if (err) throw err;
+}
+		 }
 });
 client.login(process.env.BOT_TOKEN);

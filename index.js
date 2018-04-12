@@ -667,6 +667,6 @@ const math = require('mathjs');
             return message.channel.send({embed: results})
           }
 }
-})
+}
 });
 client.login(process.env.BOT_TOKEN);

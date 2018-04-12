@@ -45,6 +45,9 @@ client.on("ready", () => {
   // docs refer to as the "ClientUser".
 });
 
+  client.user.setActivity(`The ting goes skrrrrrraa`);
+});
+
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.
   console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
@@ -543,12 +546,6 @@ if(command === "coin") {
   const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
   const coin = getRandomInt(0, 1)
   message.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
-}
-if(command === "setgame") {
-  let type = args;
-  if (!args || args.size == 0) type = 0
-  client.user.setActivity(game.join(" "), {type: type});
-	message.channel.send("Game set.");
 }
 if(command === "dabpolice") {
 	message.react("👮");

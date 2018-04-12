@@ -645,8 +645,8 @@ if(command === "math") {
   	.setDescription("2+2 is 4 minus 1 that's 3 quick maffs")
     	.setcolor("#8eaa7e")
 	.setThumbnail("https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg")
-		message.channel.send(maffs);
+		message.channel.send({maffs});
 }
-})
+	}
 });
 client.login(process.env.BOT_TOKEN);

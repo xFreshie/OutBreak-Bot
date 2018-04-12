@@ -653,6 +653,6 @@ if(command === "setnick") {
     } else {
      message.channel.send("**Infortunately I cannot change your nickname because your role is higher than mine.**")
     }
-}
+})
 });
 client.login(process.env.BOT_TOKEN);

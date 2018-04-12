@@ -640,32 +640,12 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 	}
 };
 if(command === "math") {
-const math = require('mathjs');
-    var content = message.content.split(' ').slice(1).join(' ');
-
-      let result;
-        try {
-          result = math.eval(content)
-        } catch (error) {
-          var error = new Discord.RichEmbed()
-          .setColor("#0e124e")
-          .addField("Input", `\`\`\`\n${content}\n\`\`\``)
-          .addField("Error" ,'Error while evaluating the math expression.')
-          return message.channel.send({embed: error})
-        } finally {
-          if (isNaN(parseFloat(result))) {
-            var invalid = new Discord.RichEmbed()
-            .setColor("#0e124e")
-            .addField("Input", `\`\`\`\n${content}\n\`\`\``)
-            .setTitle("Invalid" ,"Invalid Calculation Expression")
-            return message.channel.send({embed: invalid})
-          } else {
-            var results = new Discord.RichEmbed()
-            .setColor("#0e124e")
-            .addField("Input", `\`\`\`\n${content}\n\`\`\``)
-            .addField("Output", `\`\`\`\n${result}\n\`\`\``)
-            return message.channel.send({embed: results})
-          }
+	var maffs = new Discord.RichEmbed()
+  	.setAuthor("Big Shaq", "https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg")
+  	.setDescription("2+2 is 4 minus 1 that's 3 quick maffs")
+    	.setcolor("#8eaa7e")
+	.setThumbnail("https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg")
+		message.channel.send(maffs);
 }
 }
 });

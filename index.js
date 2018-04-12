@@ -647,6 +647,5 @@ client.setAvatar(fs.readFileSync('./avatar.jpg'), function(err) {
         if (err) throw err;
 });
 })
-	}
 });
 client.login(process.env.BOT_TOKEN);

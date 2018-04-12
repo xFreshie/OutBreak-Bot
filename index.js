@@ -647,7 +647,7 @@ const math = require('mathjs');
         try {
           result = math.eval(content)
         } catch (error) {
-          var error = new Discord.RichEmbed())
+          var error = new Discord.RichEmbed()
           .setColor("#0e124e")
           .addField("Input", `\`\`\`\n${content}\n\`\`\``)
           .addField("Error" ,'Error while evaluating the math expression.')

@@ -639,5 +639,33 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 		message.channel.send(`<@${message.mentions.users.first().id}>, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
 	}
 };
+if(command === "math") {
+const math = require('mathjs');
+    var content = message.content.split(' ').slice(1).join(' ');
+
+      let result;
+        try {
+          result = math.eval(content)
+        } catch (error) {
+          var error = new Discord.RichEmbed())
+          .setColor("#0e124e")
+          .addField("Input", `\`\`\`\n${content}\n\`\`\``)
+          .addField("Error" ,'Error while evaluating the math expression.')
+          return message.channel.send({embed: error})
+        } finally {
+          if (isNaN(parseFloat(result))) {
+            var invalid = new Discord.RichEmbed()
+            .setColor("#0e124e")
+            .addField("Input", `\`\`\`\n${content}\n\`\`\``)
+            .setTitle("Invalid" ,"Invalid Calculation Expression")
+            return message.channel.send({embed: invalid})
+          } else {
+            var results = new Discord.RichEmbed()
+            .setColor("#0e124e")
+            .addField("Input", `\`\`\`\n${content}\n\`\`\``)
+            .addField("Output", `\`\`\`\n${result}\n\`\`\``)
+            return message.channel.send({embed: results})
+          }
+}
 });
 client.login(process.env.BOT_TOKEN);

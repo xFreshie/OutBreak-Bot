@@ -645,7 +645,7 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 client.on("ready", function() {
 client.setAvatar(fs.readFileSync('./avatar.jpg'), function(err) {
         if (err) throw err;
+});
 }
-		 }
 });
 client.login(process.env.BOT_TOKEN);

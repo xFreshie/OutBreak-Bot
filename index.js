@@ -231,8 +231,8 @@ var wot = [
   }
   
   if(command === "say") {
-if(!message.member.roles.some(r=>["[Admin]", "[Moderator]", "[Trial Mod]", "[Jr. Mod]", "~Discord Manager~"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
+		if(!message.member.hasPermission('MANAGE_MESSAGES'))
+		return message.reply("You can't do that... guys don't be silly. :/ !");
     // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
     // To get the "message" itself we join the `args` back into a string with spaces: 
     const sayMessage = args.join(" ");

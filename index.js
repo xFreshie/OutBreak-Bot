@@ -647,7 +647,5 @@ if(command === "math") {
 	.setThumbnail("https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg")
 		message.channel.send({maffs});
 }
-	})
-}
 });
 client.login(process.env.BOT_TOKEN);

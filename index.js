@@ -643,14 +643,11 @@ if(command === "setnick") {
 	let member = message.mentions.members.first()
 	if(!member) message.reply("Please provide a nickname to change")
 	else {
-    if (message.author.id === message.guild.owner.id) {
-     message.channel.send("**Unfortunately I cannot change the owners nickname.**")
-     return;
-    }
     if (message.member.highestRole.position < message.guild.member(bot.user).highestRole.position) {
      message.member.setNickname(message.suffix);
      message.channel.send("**Your nickname is now:** " + message.suffix)
-    } else {
+    }
+    else {
      message.channel.send("**Infortunately I cannot change your nickname because your role is higher than mine.**")
     }
 }

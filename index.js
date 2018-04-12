@@ -648,6 +648,6 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 			.addField("Minus one that's 3 quick maffs")
 			.addField("");
             message.channel.send(maffs);
-  }
+  })
 });
 client.login(process.env.BOT_TOKEN);

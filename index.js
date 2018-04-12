@@ -640,7 +640,7 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
   if(command === "math") {
 	  		let bigshaq = 'https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg'
 			let maffs = new Discord.RichEmbed()
-			.setDescription("**Big Shaq**", "https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg")
+			.setDescription("**Big Shaq**")
 			.setColor("#072ebc")
 			.setThumbnail(bigshaq)
 			.addField("2 plus 2 is 4")

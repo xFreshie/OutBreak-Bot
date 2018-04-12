@@ -639,13 +639,16 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 		message.channel.send(`<@${message.mentions.users.first().id}>, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
 	}
 };
-if(command === "math") {
-	let maffs = new Discord.RichEmbed()
-  	.setAuthor("Big Shaq", "https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg")
-  	.setDescription("2+2 is 4 minus 1 that's 3 quick maffs")
-    	.setcolor("#8eaa7e")
-	.setThumbnail("https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg")
-		message.channel.send({maffs});
-}
+  if(command === "botinfo") {
+	  		let bigshaq = 'https://www.famousbirthdays.com/headshots/michael-dapaah-2.jpg'
+			let maffs = new Discord.RichEmbed()
+			.setDescription("**Big Shaq**", "https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg")
+			.setColor("#072ebc")
+			.setThumbnail(bigshaq)
+			.addField("2 plus 2 is 4")
+			.addField("Minus one that's 3 quick maffs")
+			.addField("");
+            message.channel.send(maffs);
+  }
 });
 client.login(process.env.BOT_TOKEN);

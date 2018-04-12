@@ -141,6 +141,11 @@ client.on("guildDelete", guild => {
     "Kappa",
     "Le me show u da wae"
 ];
+
+var bigshaq = [
+	'https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg'
+]
+
 var memelist = [
     'https://fthmb.tqn.com/-fP8YHAc27tYnXQCTXimB1VHI64=/1600x1487/filters:no_upscale():fill(FFCC00,1)/overlyattached-5900fa4a3df78c54563e3d8b.jpg',
     'https://media.discordapp.net/attachments/350685728688177154/404585410916777995/mem6.jpg?width=550&height=437',
@@ -638,8 +643,9 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 	}
 };
   if(command === "math") {
-            message.channel.send('**Big Shaq**: 2+2 is 4 minus 1 thats 3 quick maffs!');
-	  message.channel.send("https://c-sf.smule.com/sf/s79/arr/98/0e/4cd9b19b-b02d-459a-b808-1c79cbf2c77b_512.jpg");
+    message.channel.send("__**Big Shaq**__: 2+2 is 4 minus 1 that's 3 quick maffs", {
+        file: (bigshaq[Math.floor(Math.random() * bigshaq.length)])
+    });
   }
 });
 client.login(process.env.BOT_TOKEN);

@@ -645,7 +645,6 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 			.setThumbnail(bigshaq)
 			.addField("2 plus 2 is 4")
 			.addField("Minus one that's 3 quick maffs")
-			.addField("");
             message.channel.send(maffs);
   }
 });

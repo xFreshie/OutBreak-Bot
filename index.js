@@ -49,7 +49,7 @@ client.on("ready", () => {
 client.on("ready", function() {
 client.setAvatar(fs.readFileSync('./avatar.jpg'), function(err) {
         if (err) throw err;
-}
+})
 
 client.on("guildCreate", guild => {
   // This event triggers when the bot joins a guild.

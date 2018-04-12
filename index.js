@@ -540,7 +540,6 @@ if(command === "coin") {
   message.reply(coin==0?`🎰 The coin gave **heads**`:`🎰 The coin gave **tails**`);
 }
 if(command === "setgame") {
-exports.run = (bot, msg, [args, ...game]) => {
   let type = args;
   if (!args || args.size == 0) type = 0
   bot.user.setActivity(game.join(" "), {type: type});

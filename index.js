@@ -648,5 +648,6 @@ if(command === "math") {
 		message.channel.send({maffs});
 }
 	})
+}
 });
 client.login(process.env.BOT_TOKEN);

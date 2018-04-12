@@ -634,10 +634,26 @@ const end = ['pilot', 'canoe', 'captain', 'pirate', 'hammer', 'knob', 'box', 'jo
 
 const roll = type => type[Math.floor(Math.random() * type.length)]
 	let member = message.mentions.members.first()
-	if(!member) message.reply("you wanna kick em in the nuts?")
+	if(!member) message.reply("You wanna roast em?")
 	else {
 		message.channel.send(`<@${message.mentions.users.first().id}>, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
 	}
 };
+if(command === "setnick") {
+  if (!message.args[0]) {
+     message.channel.send("**Please provide a new nickname.**")
+     return;
+    }
+    if (message.author.id === message.guild.owner.id) {
+     message.channel.send("**Unfortunately I cannot change the owners nickname.**")
+     return;
+    }
+    if (message.member.highestRole.position < message.guild.member(bot.user).highestRole.position) {
+     message.member.setNickname(message.suffix);
+     message.channel.send("**Your nickname is now:** " + message.suffix)
+    } else {
+     message.channel.send("**Infortunately I cannot change your nickname because your role is higher than mine.**")
+    }
+}
 });
 client.login(process.env.BOT_TOKEN);

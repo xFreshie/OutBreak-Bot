@@ -639,7 +639,7 @@ if(command === "uptime") {
         message.channel.send('UPTIME:\n' + strDate);
     }
 if(command === "timeuntil") {
-            var d1 = new Date(msg.content);
+            var d1 = new Date(message.content);
             var d2 = new Date();
             var t1 = d1.getTime();
             var t2 = d2.getTime();

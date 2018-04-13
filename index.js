@@ -670,5 +670,12 @@ if(command === "timesince") {
             var seconds = parseInt((time - (totalMinutes * 60000)) / 1000);
 	    message.channel.send('Time since ' + d1.toDateString() + ': \n**' + years + ' years, ' + days + ' days, ' + hours + ' hours, ' + minutes + ' minutes, and ' + seconds + ' seconds**');
 }
+if(command === "triggered") {
+        var { Attachment } = require('discord.js'), user = message.author;
+        if (message.mentions.users.first()) user = message.mentions.users.first();
+        client.IdioticAPI.triggered(user.displayAvatarURL.replace('.gif', '.png')).then(img => {
+            message.channel.send(new Attachment(img, 'triggered.png'));
+});
+}
 });
 client.login(process.env.BOT_TOKEN);

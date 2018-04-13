@@ -730,6 +730,18 @@ if(command === "reminder") {
 
     message.channel.send(`I will remind you to \`${blah.split("#")[0]}\`, ${blah.split("#")[1]} from now.`);
 }
+  regCheck(reminder) {
+    const remind = /(?:^| )(?:in ?)?(((?:\d{1,2}(?:\.\d|\d)?)|a) ?((?:m(?:in(?:ute)?)?|h(?:our)?|d(?:ay)?|w(?:eek)?|m(?:onth)?|y(?:ear)?)s?))\b/gi.exec(reminder);
+    if (!remind) return false;
+    const time = remind[1]
+      .replace(/ ms?\b/, " min") //m => min
+      .replace(/\ba ?((?:m(?:in(?:ute)?)?|h(?:our)?|d(?:ay)?|w(?:eek)?|m(?:onth)?|y(?:ear)?)s?)\b/g, "1 $1").trim(); // a "something" => 1 "something"
+    const input = /(?:me ?)?(?:to ?)?(.*)/gi.exec(reminder)[1]
+      .replace(remind[0], "").trim();
+    if (input.length === 0) return false;
+    return `${input}#${time}`;
+  }
+}
 });
 client.login(process.env.BOT_TOKEN);
 //Restart, uptime, timeuntil, triggered, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules

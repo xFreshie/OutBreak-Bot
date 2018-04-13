@@ -629,12 +629,15 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
         file: (bigshaq[Math.floor(Math.random() * bigshaq.length)])
     });
   }
-if(command === "setprefix") {
-        if (!message.member.hasPermission('MANAGE_GUILD') && !message.author.id === client.config.owner) return message.reply("you do not have permission to change this server's prefix!");
-        var prefix = client.setPrefix(message.content.trim(), message.guild);
-        if (prefix !== undefined) {
-            message.channel.send('Server prefix successfully set to `' + prefix + '`!');
-}
-}
+if(command === "uptime") {
+        var date = new Date(client.uptime);
+        var strDate = '**';
+        strDate += date.getUTCDate() - 1 + ' days, ';
+        strDate += date.getUTCHours() + ' hours, ';
+        strDate += date.getUTCMinutes() + ' minutes, ';
+        strDate += date.getUTCSeconds() + ' seconds**';
+        message.channel.send('UPTIME:\n' + strDate);
+    },
+};
 });
 client.login(process.env.BOT_TOKEN);

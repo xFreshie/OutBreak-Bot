@@ -598,7 +598,7 @@ const {
         await msg.say(`${response} To run commands, use ${msg.anyUsage('command')}.`);
         return null;
     }
-	});
+	})
 }
 }
 if(command === "goodlaughing") {

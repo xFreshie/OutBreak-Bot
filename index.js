@@ -715,3 +715,4 @@ if(command === "blacklist") {
     }
 });
 client.login(process.env.BOT_TOKEN);
+//Restart, uptime, timeuntil, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules

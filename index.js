@@ -624,6 +624,11 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
 		message.channel.send(`<@${message.mentions.users.first().id}>, you know what? you're nothing but ${roll(start)} ${roll(middle)} ${roll(end)}.`)
 	}
 };
+  if(command === "math") {
+    message.channel.send("__**Big Shaq**__: 2+2 is 4 minus 1 that's 3 quick maffs", {
+        file: (bigshaq[Math.floor(Math.random() * bigshaq.length)])
+    });
+  }
 if(command === "setprefix") {
         if (!message.member.hasPermission('MANAGE_GUILD') && !message.author.id === client.config.owner) return message.reply("you do not have permission to change this server's prefix!");
         if (message.content.trim().length > 10) return message.channel.send('That prefix is too long! Limit is 10 characters.');
@@ -633,10 +638,6 @@ if(command === "setprefix") {
         if (prefix !== undefined) {
             message.channel.send('Server prefix successfully set to `' + prefix + '`!');
 }
-  if(command === "math") {
-    message.channel.send("__**Big Shaq**__: 2+2 is 4 minus 1 that's 3 quick maffs", {
-        file: (bigshaq[Math.floor(Math.random() * bigshaq.length)])
-    });
-  }
+}
 });
 client.login(process.env.BOT_TOKEN);

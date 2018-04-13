@@ -716,7 +716,6 @@ if(command === "blacklist") {
 if(command === "triggered") {
         var { Attachment } = require('discord.js'), user = message.author;
         if (message.mentions.users.first()) user = message.mentions.users.first();
-        client.IdioticAPI.triggered(user.displayAvatarURL.replace('.gif', '.png')).then(img => {
             message.channel.send(new Attachment(img, '200w_s.gif'));
         });
     }

@@ -555,17 +555,49 @@ if(command === "tellmeaboutit") {
 	message.channel.send("**Check your message's reacts lol**");
 }
 if(command === "setprefix") {
-			let guild = message.guild.id
-			if (!guild) {client.respond(message, "Something went wrong :v"); return;}
-			
-			if (!args[0]) {client.respond(message, 'Current prefix: \`' + (guild.prefix ? guild.prefix : config.prefix) + '\`'); return;}
-			
-			let author = message.guild.members.array().filter(m => {return m.id == message.author.id});
-			if (!author[0].hasPermission('MANAGE_GUILD')) {client.respond(message, "You don't have the administator permission!"); return;}
-			
-			guild.prefix = args[0]; 
-			client.GUILDS.set(guild.id, guild);
-			client.respond(message, "Changed prefix to: \`" + args[0] + '\`');
+const {
+    stripIndents,
+    oneLine
+} = require('common-tags');
+const {
+	Command
+} = require('discord.js-commando');
+        // Just output the prefix
+        if (!args.prefix) {
+            const prefix = msg.guild ? msg.guild.commandPrefix : this.client.commandPrefix;
+            return msg.say(stripIndents `
+				${prefix ? `The command prefix is \`${prefix}\`.` : 'There is no command prefix.'}
+				To run commands, use ${msg.anyUsage('command')}.
+			`);
+        }
+
+        // Check the user's permission before changing anything
+        if (msg.guild) {
+            if (!msg.member.hasPermission('ADMINISTRATOR') && !this.client.isOwner(msg.author)) {
+                return msg.say('Only administrators may change the command prefix.');
+            }
+        } else if (!this.client.isOwner(msg.author)) {
+            return msg.say('Only the bot owner(s) may change the global command prefix.');
+        }
+
+        // Save the prefix
+        const lowercase = args.prefix.toLowerCase();
+        const prefix = lowercase === 'none' ? '' : args.prefix;
+        let response;
+        if (lowercase === 'default') {
+            if (msg.guild) msg.guild.commandPrefix = null;
+            else this.client.commandPrefix = null;
+            const current = this.client.commandPrefix ? `\`${this.client.commandPrefix}\`` : 'no prefix';
+            response = `Reset the command prefix to the default (currently ${current}).`;
+        } else {
+            if (msg.guild) msg.guild.commandPrefix = prefix;
+            else this.client.commandPrefix = prefix;
+            response = prefix ? `Set the command prefix to \`${args.prefix}\`.` : 'Removed the command prefix entirely.';
+        }
+
+        await msg.say(`${response} To run commands, use ${msg.anyUsage('command')}.`);
+        return null;
+    }
 }
 if(command === "goodlaughing") {
 	message.channel.send("This moderators are to funny the can say what the want but when i say 1 time Rekt and ez? The warn me and kick me from the server Fresh/xStar and neko saying all the time to Players 'This kid is to funny hahaah i cant stop laugh'''around 7 times and when i say because i kild him Ez? the warn me for toxic is that toxic the are saying Kids and noob to me but when i say Rekt the warn me instant to funny i ask Neko to f3 because he spammed me when he eating soup he also dont wanna show me his screenshot i ask Why you dont showing? Fresh say because he is staff? SO? hahaaha so if you are rank moderator you mean that you cant hack? thats so sad the doing notting when someone is doing racist and saying the N word to people i told you already frost is dead when trash left everything changed really sad");

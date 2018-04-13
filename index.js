@@ -729,7 +729,8 @@ if(command === "reminder") {
     });
 
     message.channel.send(`I will remind you to \`${blah.split("#")[0]}\`, ${blah.split("#")[1]} from now.`);
-}
+  }
+
   regCheck(reminder) {
     const remind = /(?:^| )(?:in ?)?(((?:\d{1,2}(?:\.\d|\d)?)|a) ?((?:m(?:in(?:ute)?)?|h(?:our)?|d(?:ay)?|w(?:eek)?|m(?:onth)?|y(?:ear)?)s?))\b/gi.exec(reminder);
     if (!remind) return false;
@@ -740,7 +741,6 @@ if(command === "reminder") {
       .replace(remind[0], "").trim();
     if (input.length === 0) return false;
     return `${input}#${time}`;
-  }
 }
 });
 client.login(process.env.BOT_TOKEN);

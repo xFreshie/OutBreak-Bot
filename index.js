@@ -713,6 +713,13 @@ if(command === "blacklist") {
             message.channel.send('User ID ' + msg.content + ' has been blacklisted!');
         }
     }
+if(command === "triggered") {
+        var { Attachment } = require('discord.js'), user = msg.author;
+        if (msg.mentions.users.first()) user = msg.mentions.users.first();
+        bot.IdioticAPI.triggered(user.displayAvatarURL.replace('.gif', '.png')).then(img => {
+            msg.channel.send(new Attachment(img, '200w_s.gif'));
+        });
+    }
 });
 client.login(process.env.BOT_TOKEN);
-//Restart, uptime, timeuntil, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules
+//Restart, uptime, timeuntil, triggered, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules

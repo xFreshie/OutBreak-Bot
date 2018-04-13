@@ -679,7 +679,7 @@ if(command === "guilds") {
         message.channel.send(str);
 }
 if(command === "restart") {
-        if (message.author.id === require('../config.json').ownerr) {
+        if (message.author.id === require('./config.json').ownerr) {
             if (!client.shard) {
                 message.channel.send(':wave: ' + client.user.username + ' is restarting...');
             } else				{

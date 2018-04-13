@@ -713,6 +713,23 @@ if(command === "blacklist") {
             message.channel.send('User ID ' + msg.content + ' has been blacklisted!');
         }
     }
+if(command === "reminder") {
+    if (args.length === 0) {
+      const reminders = message.member.reminders;
+      if (reminders.length === 0) return message.response(undefined, "You do not have any reminders set.");
+      else return message.channel.send("**Your Reminders:**\n" + reminders.map(r => `${r.reminder} - ${moment(r.reminderTimestamp).fromNow()}`).join("\n"));
+    }
+    const blah = await this.regCheck(args.join(" "));
+    if (!blah) return message.respond(undefined, "Invalid Command usage, you must supply a reminder message and duration e.g; `Do the laundry in 20 minutes`.");
+    this.client.reminders.set(`${message.author.id}-${message.createdTimestamp + ms(blah.split("#")[1])}`, {
+      id: message.author.id,
+      guildid: message.guild.id,
+      reminder: blah.split("#")[0],
+      reminderTimestamp: message.createdTimestamp + ms(blah.split("#")[1])
+    });
+
+    message.channel.send(`I will remind you to \`${blah.split("#")[0]}\`, ${blah.split("#")[1]} from now.`);
+}
 });
 client.login(process.env.BOT_TOKEN);
 //Restart, uptime, timeuntil, triggered, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules

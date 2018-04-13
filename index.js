@@ -717,8 +717,7 @@ if(command === "triggered") {
         var { Attachment } = require('discord.js'), user = message.author;
         if (message.mentions.users.first()) user = message.mentions.users.first();
             message.channel.send(new Attachment(img, '200w_s.gif'));
-        });
-    }
+}
 });
 client.login(process.env.BOT_TOKEN);
 //Restart, uptime, timeuntil, triggered, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules

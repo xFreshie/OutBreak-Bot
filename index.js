@@ -716,7 +716,7 @@ if(command === "blacklist") {
 if(command === "triggered") {
         var { Attachment } = require('discord.js'), user = message.author;
         if (message.mentions.users.first()) user = message.mentions.users.first();
-            message.channel.send(new Attachment(img, '200w_s.gif'));
+            message.channel.send(new Attachment(image, '200w_s.gif'));
 }
 });
 client.login(process.env.BOT_TOKEN);

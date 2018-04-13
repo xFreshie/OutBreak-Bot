@@ -656,6 +656,6 @@ if(command === "timeuntil") {
         } else {
             message.channel.send('Error processing date. Please put in MM/DD/YY format');
         }
-}
+})
 });
 client.login(process.env.BOT_TOKEN);

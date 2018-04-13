@@ -692,5 +692,6 @@ if(command === "restart") {
         } else {
             message.reply('you do not have permission to do this!');
 }
+}
 });
 client.login(process.env.BOT_TOKEN);

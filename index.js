@@ -678,5 +678,19 @@ if(command === "guilds") {
         }
         message.channel.send(str);
 }
+if(command === "restart") {
+        if (message.author.id === require('../config.json').ownerr) {
+            if (!client.shard) {
+                message.channel.send(':wave: ' + client.user.username + ' is restarting...');
+            } else				{
+                message.channel.send(':wave: Shard ' + client.shard.id + ' of ' + client.user.username + ' is restarting...');
+            }
+
+            setTimeout(() => {
+                process.exit();
+            }, 1000);
+        } else {
+            message.reply('you do not have permission to do this!');
+}
 });
 client.login(process.env.BOT_TOKEN);

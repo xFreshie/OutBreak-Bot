@@ -633,6 +633,7 @@ if(command === "setprefix") {
         if (prefix !== undefined) {
             message.channel.send('Server prefix successfully set to `' + prefix + '`!');
 }
+})
   if(command === "math") {
     message.channel.send("__**Big Shaq**__: 2+2 is 4 minus 1 that's 3 quick maffs", {
         file: (bigshaq[Math.floor(Math.random() * bigshaq.length)])

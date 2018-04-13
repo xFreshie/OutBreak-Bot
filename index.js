@@ -598,7 +598,7 @@ const {
         await msg.say(`${response} To run commands, use ${msg.anyUsage('command')}.`);
         return null;
     }
-	};
+	});
 }
 if(command === "goodlaughing") {
 	message.channel.send("This moderators are to funny the can say what the want but when i say 1 time Rekt and ez? The warn me and kick me from the server Fresh/xStar and neko saying all the time to Players 'This kid is to funny hahaah i cant stop laugh'''around 7 times and when i say because i kild him Ez? the warn me for toxic is that toxic the are saying Kids and noob to me but when i say Rekt the warn me instant to funny i ask Neko to f3 because he spammed me when he eating soup he also dont wanna show me his screenshot i ask Why you dont showing? Fresh say because he is staff? SO? hahaaha so if you are rank moderator you mean that you cant hack? thats so sad the doing notting when someone is doing racist and saying the N word to people i told you already frost is dead when trash left everything changed really sad");

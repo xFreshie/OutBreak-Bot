@@ -638,6 +638,5 @@ if(command === "uptime") {
         strDate += date.getUTCSeconds() + ' seconds**';
         message.channel.send('UPTIME:\n' + strDate);
     }
-};
 });
 client.login(process.env.BOT_TOKEN);

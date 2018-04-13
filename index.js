@@ -631,7 +631,6 @@ const roll = type => type[Math.floor(Math.random() * type.length)]
   }
 if(command === "setprefix") {
         if (!message.member.hasPermission('MANAGE_GUILD') && !message.author.id === client.config.owner) return message.reply("you do not have permission to change this server's prefix!");
-        if (message.content.trim().length > 10) return message.channel.send('That prefix is too long! Limit is 10 characters.');
         if (message.content.trim().indexOf(' ') > -1) return message.channel.send('The prefix cannot contain spaces!');
 
         var prefix = client.setPrefix(message.content.trim(), message.guild);

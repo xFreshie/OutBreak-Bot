@@ -740,7 +740,7 @@ const fortnite = new FNite(process.env.TRACKER);
     } else {
       message.channel.send(`Player Not Found or invalid form type, for correct usage do: \`${this.help.usage}\`.`);
     }
-})
+});
 });
 client.login(process.env.BOT_TOKEN);
 //Restart, uptime, timeuntil, triggered, timesince, blacklist and guilds commands were used from RoBot, link to the source > https://github.com/mcao/RoBot/tree/master/modules
